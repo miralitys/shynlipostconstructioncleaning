@@ -1,0 +1,5 @@
+node_modules/
+dist/
+screenshots/
+00_resource_index.md
+.DS_Store
