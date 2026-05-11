@@ -2,6 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { chromium } from 'playwright'
 
 const baseUrl = process.env.BASE_URL ?? 'http://127.0.0.1:5190'
+const localRenderThresholdMs = baseUrl.includes('127.0.0.1') || baseUrl.includes('localhost') ? 500 : 1500
 const top30 = [
   '/',
   '/post-construction-cleaning',
@@ -111,7 +112,7 @@ for (const path of top30) {
     if (!lower.includes('local relevance')) failures.push(`${path}: missing explicit local relevance block`)
   }
   if (data.scrollWidth > data.clientWidth + 2) failures.push(`${path}: horizontal overflow`)
-  if (domMs > 500) failures.push(`${path}: slow local DOM render ${domMs}ms`)
+  if (domMs > localRenderThresholdMs) failures.push(`${path}: slow DOM render ${domMs}ms`)
 
   pages.push({ path, domMs, ...data })
 }
