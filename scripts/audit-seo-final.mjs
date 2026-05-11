@@ -115,7 +115,7 @@ const report = {
 
 const reportDir = new URL('../screenshots/', import.meta.url)
 mkdirSync(reportDir, { recursive: true })
-writeFileSync(new URL('shiny-post-construction-final-seo-audit-2026-05-10.json', reportDir), JSON.stringify(report, null, 2))
+writeFileSync(new URL('shynli-post-construction-final-seo-audit-2026-05-10.json', reportDir), JSON.stringify(report, null, 2))
 
 if (failures.length) {
   console.error(failures.join('\n'))
@@ -123,4 +123,4 @@ if (failures.length) {
 }
 
 console.log(`Final SEO audit passed for ${urls.length} sitemap URLs.`)
-console.log(`Report: screenshots/shiny-post-construction-final-seo-audit-2026-05-10.json`)
+console.log(`Report: screenshots/shynli-post-construction-final-seo-audit-2026-05-10.json`)

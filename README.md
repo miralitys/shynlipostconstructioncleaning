@@ -33,10 +33,8 @@ npm run dev
 - Robots file points Google to `https://shynlipostconstructioncleaning.com/sitemap.xml`.
 - Heavy debris, hazardous cleanup, dumpsters, and construction waste hauling are intentionally not promised.
 
-## Vault Links
+## Project Notes
 
-- Resource index: [[00_resource_index]]
-- Post-construction references: [[../../03_Исполнение/40_post_construction_cleaning_competitor_design_references_2026-05-10]]
-- Post-construction SEO architecture: [[../../03_Исполнение/41_shiny_post_construction_seo_architecture_2026-05-10]]
-- Shynli.com project: [[../../99_start_here]]
-- Shiny site portfolio map: [[../../../03_Исполнение/32_shiny_site_portfolio_generation_map_2026-05-10]]
+- Production brand: `Shynli Post-Construction Cleaning`
+- Lead endpoint: `https://shynlicleaningservice.com/quote`
+- Sitemap: `https://shynlipostconstructioncleaning.com/sitemap.xml`
