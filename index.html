@@ -17,16 +17,21 @@
           return
         }
         document.documentElement.dataset.route = path === '/' ? 'home' : 'inner'
+        if (path === '/') {
+          const heroPreload = document.createElement('link')
+          heroPreload.rel = 'preload'
+          heroPreload.as = 'image'
+          heroPreload.href = '/images/post-construction-hero.avif'
+          heroPreload.setAttribute(
+            'imagesrcset',
+            '/images/post-construction-hero-720.avif 720w, /images/post-construction-hero.avif 1200w',
+          )
+          heroPreload.setAttribute('imagesizes', '100vw')
+          heroPreload.setAttribute('fetchpriority', 'high')
+          document.head.appendChild(heroPreload)
+        }
       })()
     </script>
-    <link
-      rel="preload"
-      as="image"
-      href="/images/post-construction-hero.avif"
-      imagesrcset="/images/post-construction-hero-720.avif 720w, /images/post-construction-hero.avif 1200w"
-      imagesizes="100vw"
-      fetchpriority="high"
-    />
     <title>Shynli Post-Construction Cleaning | Inspection-ready final cleans</title>
     <style>
       html[data-route='inner'] .initial-site-header,
