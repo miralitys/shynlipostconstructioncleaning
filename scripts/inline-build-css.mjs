@@ -32,6 +32,12 @@ if (moduleScriptMatch) {
   const appScriptSrc = moduleScriptMatch[1]
   const loader = `<script data-deferred-app-loader>
 (() => {
+  const path = window.location.pathname;
+  const lastSegment = path.split('/').pop() || '';
+  if (path !== '/' && !path.endsWith('/') && !lastSegment.includes('.')) {
+    window.location.replace(path + '/' + window.location.search + window.location.hash);
+    return;
+  }
   const src = ${JSON.stringify(appScriptSrc)};
   const load = () => {
     if (window.__shynliAppLoaded) return;

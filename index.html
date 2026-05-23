@@ -8,6 +8,17 @@
       name="description"
       content="Shynli Post-Construction Cleaning helps prepare renovated and newly finished spaces for walkthrough, listing, and move-in."
     />
+    <script>
+      ;(() => {
+        const path = window.location.pathname
+        const lastSegment = path.split('/').pop() || ''
+        if (path !== '/' && !path.endsWith('/') && !lastSegment.includes('.')) {
+          window.location.replace(`${path}/${window.location.search}${window.location.hash}`)
+          return
+        }
+        document.documentElement.dataset.route = path === '/' ? 'home' : 'inner'
+      })()
+    </script>
     <link
       rel="preload"
       as="image"
@@ -17,9 +28,6 @@
       fetchpriority="high"
     />
     <title>Shynli Post-Construction Cleaning | Inspection-ready final cleans</title>
-    <script>
-      document.documentElement.dataset.route = window.location.pathname === '/' ? 'home' : 'inner'
-    </script>
     <style>
       html[data-route='inner'] .initial-site-header,
       html[data-route='inner'] .initial-home-hero {
