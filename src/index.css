@@ -52,6 +52,11 @@ button { cursor: pointer; }
 .checkline,
 .phase-card li,
 .sticky-bar a,
+.icon-glyph,
+.icon-arrow,
+.proof-mark,
+.audience-mark,
+.accordion-chevron,
 .final-cta svg {
   display: inline-flex;
   align-items: center;
@@ -408,6 +413,58 @@ textarea {
   width: 9px;
   height: 9px;
   border: 2px solid rgba(245, 197, 66, 0.92);
+}
+
+.icon-arrow,
+.icon-glyph,
+.proof-mark,
+.audience-mark,
+.accordion-chevron {
+  justify-content: center;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.icon-arrow {
+  min-width: 1.1em;
+}
+
+.icon-glyph,
+.proof-mark,
+.audience-mark {
+  color: var(--graphite);
+  background: var(--safety);
+}
+
+.icon-glyph {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-glyph-large {
+  width: 26px;
+  height: 26px;
+}
+
+.proof-mark,
+.audience-mark {
+  width: 24px;
+  height: 24px;
+}
+
+.audience-mark {
+  font-size: 0.68rem;
+}
+
+.accordion-chevron {
+  width: 16px;
+  height: 16px;
+  color: #5f665e;
+  transition: transform 200ms ease;
+}
+
+[data-slot="accordion-trigger"][data-state="open"] .accordion-chevron {
+  transform: rotate(180deg);
 }
 
 .scope-section {

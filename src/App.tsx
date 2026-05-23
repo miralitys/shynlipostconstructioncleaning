@@ -1,14 +1,4 @@
 import { useEffect, useMemo, useState } from 'react'
-import {
-  ArrowRight,
-  Building2,
-  ClipboardCheck,
-  HardHat,
-  Phone,
-  ShieldCheck,
-  Sparkles,
-  Upload,
-} from 'lucide-react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -83,17 +73,17 @@ const proofItems = [
 
 const audienceBlocks = [
   {
-    icon: Building2,
+    mark: 'GC',
     title: 'General contractors',
     copy: 'A cleaner closeout partner for final inspection, owner walkthrough, and occupancy handoff.',
   },
   {
-    icon: HardHat,
+    mark: 'RM',
     title: 'Remodelers',
     copy: 'After-renovation dust, cabinet interiors, glass, floors, fixtures, and the last visual reset.',
   },
   {
-    icon: Building2,
+    mark: 'PM',
     title: 'Property teams',
     copy: 'Turnover cleaning for renovated units, build-outs, leasing photos, and move-in schedules.',
   },
@@ -820,7 +810,7 @@ function Header({ legal = false }: { legal?: boolean }) {
   return (
     <header className="site-header">
       <a href={home} className="brand" aria-label="Shynli Post-Construction Cleaning home">
-        <span className="brand-mark"><HardHat size={18} /></span>
+        <span className="brand-mark">S</span>
         <span>Shynli Post</span>
       </a>
       <nav aria-label="Primary navigation">
@@ -882,10 +872,10 @@ function BidForm() {
       </label>
       <div className="bid-actions">
         <Button type="submit" size="lg">
-          Send project details <ArrowRight size={18} />
+          Send project details <span className="icon-arrow" aria-hidden="true">-&gt;</span>
         </Button>
         <Button type="button" variant="secondary" size="icon" aria-label="Attach jobsite photos" title="Attach jobsite photos">
-          <Upload size={18} />
+          <span className="icon-glyph" aria-hidden="true">↑</span>
         </Button>
       </div>
     </form>
@@ -906,7 +896,7 @@ function Hero() {
       <div className="hero__overlay" />
       <div className="hero__content">
         <div className="hero__copy">
-          <Badge className="hero-badge"><ShieldCheck size={15} /> Post-construction cleaning</Badge>
+          <Badge className="hero-badge">Post-construction cleaning</Badge>
           <h1>Inspection-ready final cleans for closeout, walkthrough, and move-in.</h1>
           <p>
             Detailed cleaning after remodels, build-outs, and construction work. We remove the dust, reset the
@@ -914,7 +904,7 @@ function Hero() {
           </p>
           <div className="hero-actions">
             <Button asChild size="lg">
-              <a href={quoteHref({ cta: 'hero-bid' })}>Request a bid <ArrowRight size={18} /></a>
+              <a href={quoteHref({ cta: 'hero-bid' })}>Request a bid <span className="icon-arrow" aria-hidden="true">-&gt;</span></a>
             </Button>
             <Button asChild variant="secondary" size="lg">
               <a href="#scope">See scope</a>
@@ -1043,7 +1033,7 @@ function ProofSection() {
         {proofItems.map(([title, copy]) => (
           <Card key={title} className="proof-card">
             <CardContent>
-              <Sparkles size={18} />
+              <span className="proof-mark" aria-hidden="true">✦</span>
               <h3>{title}</h3>
               <p>{copy}</p>
             </CardContent>
@@ -1051,16 +1041,13 @@ function ProofSection() {
         ))}
       </div>
       <div className="audience-grid">
-        {audienceBlocks.map((block) => {
-          const Icon = block.icon
-          return (
-            <article className="audience-tile" key={block.title}>
-              <Icon size={24} />
-              <h3>{block.title}</h3>
-              <p>{block.copy}</p>
-            </article>
-          )
-        })}
+        {audienceBlocks.map((block) => (
+          <article className="audience-tile" key={block.title}>
+            <span className="audience-mark" aria-hidden="true">{block.mark}</span>
+            <h3>{block.title}</h3>
+            <p>{block.copy}</p>
+          </article>
+        ))}
       </div>
     </section>
   )
@@ -1174,12 +1161,12 @@ function SeoLandingPage({ page }: { page: SeoPage }) {
   return (
     <section className="seo-page" id="top">
       <div className="seo-hero">
-        <Badge className="hero-badge"><ShieldCheck size={15} /> {page.eyebrow}</Badge>
+        <Badge className="hero-badge">{page.eyebrow}</Badge>
         <h1>{page.title}</h1>
         <p>{page.intro}</p>
         <div className="hero-actions">
           <Button asChild size="lg">
-            <a href={quoteHref({ cta: 'seo-hero-bid' })}>Request a bid <ArrowRight size={18} /></a>
+            <a href={quoteHref({ cta: 'seo-hero-bid' })}>Request a bid <span className="icon-arrow" aria-hidden="true">-&gt;</span></a>
           </Button>
           <Button asChild variant="secondary" size="lg">
             <a href="/#scope">See scope</a>
@@ -1299,7 +1286,7 @@ function SeoLandingPage({ page }: { page: SeoPage }) {
                 {localDetails.nearbyLinks.map((link) => (
                   <a href={link.href} key={link.href}>
                     <span>{link.label}</span>
-                    <ArrowRight size={15} />
+                    <span className="icon-arrow" aria-hidden="true">-&gt;</span>
                   </a>
                 ))}
               </div>
@@ -1315,7 +1302,7 @@ function SeoLandingPage({ page }: { page: SeoPage }) {
           {links.map((link) => (
             <a href={link.href} key={link.href}>
               <span>{link.label}</span>
-              <ArrowRight size={16} />
+              <span className="icon-arrow" aria-hidden="true">-&gt;</span>
             </a>
           ))}
         </div>
@@ -1344,7 +1331,7 @@ function SeoLandingPage({ page }: { page: SeoPage }) {
           </p>
         </div>
         <Button asChild size="lg">
-          <a href={quoteHref({ cta: 'seo-final-quote' })}>Request a project quote <ArrowRight size={18} /></a>
+          <a href={quoteHref({ cta: 'seo-final-quote' })}>Request a project quote <span className="icon-arrow" aria-hidden="true">-&gt;</span></a>
         </Button>
       </section>
     </section>
@@ -1355,14 +1342,14 @@ function FinalCta() {
   return (
     <section className="final-cta">
       <div>
-        <ClipboardCheck size={26} />
+        <span className="icon-glyph icon-glyph-large" aria-hidden="true">✓</span>
         <h2>Ready for a cleaner closeout?</h2>
         <p>
           Send the project details, turnover date, and a few jobsite photos. We will help map the right clean.
         </p>
       </div>
       <Button asChild size="lg">
-        <a href={quoteHref({ cta: 'final-cta' })}>Request a project quote <ArrowRight size={18} /></a>
+        <a href={quoteHref({ cta: 'final-cta' })}>Request a project quote <span className="icon-arrow" aria-hidden="true">-&gt;</span></a>
       </Button>
     </section>
   )
@@ -1371,8 +1358,8 @@ function FinalCta() {
 function StickyBar() {
   return (
     <aside className="sticky-bar" aria-label="Quick contact">
-      <a href="tel:+16308127077" aria-label="Call Shynli Post-Construction Cleaning"><Phone size={18} /></a>
-      <a href={quoteHref({ cta: 'sticky-quote' })} aria-label="Open quote form"><ClipboardCheck size={18} /></a>
+      <a href="tel:+16308127077" aria-label="Call Shynli Post-Construction Cleaning"><span className="icon-glyph" aria-hidden="true">☎</span></a>
+      <a href={quoteHref({ cta: 'sticky-quote' })} aria-label="Open quote form"><span className="icon-glyph" aria-hidden="true">✓</span></a>
     </aside>
   )
 }
@@ -1383,7 +1370,7 @@ function Footer({ legal = false }: { legal?: boolean }) {
       <div className="footer-main">
         <div className="footer-brand">
           <a href={legal ? '/' : '#top'} className="brand footer-logo" aria-label="Shynli Post-Construction Cleaning home">
-            <span className="brand-mark"><HardHat size={18} /></span>
+            <span className="brand-mark">S</span>
             <span>Shynli Post</span>
           </a>
           <p>
@@ -1394,7 +1381,7 @@ function Footer({ legal = false }: { legal?: boolean }) {
             shynlipostconstructioncleaning.com
           </a>
           <div className="footer-trust">
-            <span><ShieldCheck size={15} /> Insured crew</span>
+            <span>Insured crew</span>
             <span>Chicagoland service area</span>
           </div>
         </div>
