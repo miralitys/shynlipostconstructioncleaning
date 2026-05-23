@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/inline-build-css.mjs",
     "audit:seo": "node scripts/audit-seo-final.mjs",
     "audit:top30": "node scripts/audit-top30-production-risk.mjs",
     "audit:quotes": "node scripts/audit-quote-routing.mjs",
