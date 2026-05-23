@@ -1506,7 +1506,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <main>
         <Hero />
         <PhaseSection />
