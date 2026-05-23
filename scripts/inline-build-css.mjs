@@ -43,9 +43,13 @@ if (moduleScriptMatch) {
     document.head.appendChild(script);
   };
   if (window.location.pathname === '/') {
-    window.addEventListener('pointerdown', load, { once: true });
     window.addEventListener('keydown', load, { once: true });
-    window.setTimeout(load, 2500);
+    window.addEventListener('pointerdown', load, { once: true });
+    window.addEventListener('pointermove', load, { once: true });
+    window.addEventListener('scroll', load, { once: true, passive: true });
+    window.addEventListener('touchstart', load, { once: true, passive: true });
+    window.addEventListener('wheel', load, { once: true, passive: true });
+    window.setTimeout(load, 12000);
   } else {
     load();
   }
