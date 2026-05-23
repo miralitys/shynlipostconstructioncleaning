@@ -216,6 +216,20 @@ h3 {
   font-size: 0.94rem;
 }
 .trust-row span { gap: 8px; white-space: nowrap; }
+.trust-row span::before,
+.phase-card li::before,
+.checkline::before,
+.city-list a::before,
+.footer-trust span:last-child::before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 auto;
+}
+.trust-row span::before {
+  width: 8px;
+  height: 8px;
+  background: var(--safety);
+}
 
 .bid-panel {
   display: grid;
@@ -390,6 +404,11 @@ textarea {
   list-style: none;
 }
 .phase-card li { gap: 8px; }
+.phase-card li::before {
+  width: 9px;
+  height: 9px;
+  border: 2px solid rgba(245, 197, 66, 0.92);
+}
 
 .scope-section {
   display: grid;
@@ -437,7 +456,11 @@ textarea {
   background: #fffdf8;
   border: 1px solid rgba(17, 20, 15, 0.12);
 }
-.checkline svg { color: #6b570d; }
+.checkline::before {
+  width: 9px;
+  height: 9px;
+  background: #8b7010;
+}
 
 .service-areas {
   border-top: 1px solid var(--line);
@@ -500,9 +523,11 @@ textarea {
   color: #8b7010;
 }
 
-.city-list svg {
-  flex: 0 0 auto;
-  color: #8b7010;
+.city-list a::before,
+.footer-trust span:last-child::before {
+  width: 6px;
+  height: 6px;
+  background: #8b7010;
 }
 
 .proof-section { border-top: 1px solid var(--line); }

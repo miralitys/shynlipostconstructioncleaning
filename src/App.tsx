@@ -1,12 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import {
   ArrowRight,
-  BadgeCheck,
   Building2,
-  Check,
   ClipboardCheck,
   HardHat,
-  MapPin,
   Phone,
   ShieldCheck,
   Sparkles,
@@ -102,7 +99,7 @@ const audienceBlocks = [
     copy: 'After-renovation dust, cabinet interiors, glass, floors, fixtures, and the last visual reset.',
   },
   {
-    icon: MapPin,
+    icon: Building2,
     title: 'Property teams',
     copy: 'Turnover cleaning for renovated units, build-outs, leasing photos, and move-in schedules.',
   },
@@ -931,7 +928,7 @@ function Hero() {
           </div>
           <div className="trust-row" aria-label="Trust signals">
             {trust.map((item) => (
-              <span key={item}><Check size={16} /> {item}</span>
+              <span key={item}>{item}</span>
             ))}
           </div>
         </div>
@@ -961,7 +958,7 @@ function PhaseSection() {
               <p>{step.copy}</p>
               <ul>
                 {step.points.map((point) => (
-                  <li key={point}><BadgeCheck size={16} /> {point}</li>
+                  <li key={point}>{point}</li>
                 ))}
               </ul>
             </article>
@@ -996,7 +993,6 @@ function ScopeSection() {
         <div className="checklist">
           {checklist.map((item) => (
             <div className="checkline" key={item}>
-              <Check size={17} />
               <span>{item}</span>
             </div>
           ))}
@@ -1026,7 +1022,6 @@ function ServiceAreasSection() {
             <div className="city-list">
               {group.cities.map((city) => (
                 <a href={`/service-areas/${slugify(city)}`} key={city}>
-                  <MapPin size={14} />
                   {city}
                 </a>
               ))}
@@ -1231,7 +1226,6 @@ function SeoLandingPage({ page }: { page: SeoPage }) {
           <div className="checklist">
             {page.bullets.map((item) => (
               <div className="checkline" key={item}>
-                <Check size={17} />
                 <span>{item}</span>
               </div>
             ))}
@@ -1407,7 +1401,7 @@ function Footer({ legal = false }: { legal?: boolean }) {
           </a>
           <div className="footer-trust">
             <span><ShieldCheck size={15} /> Insured crew</span>
-            <span><MapPin size={15} /> Chicagoland service area</span>
+            <span>Chicagoland service area</span>
           </div>
         </div>
 
