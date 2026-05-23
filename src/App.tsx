@@ -28,12 +28,18 @@ type SeoPage = {
   faq: Array<{ q: string; a: string }>
 }
 
-const heroImage =
-  'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85'
-const dustImage =
-  'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85'
-const finishedImage =
-  'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85'
+const unsplashImage = (id: string, width: number, quality = 62) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=${quality}`
+
+const heroImageId = 'photo-1504307651254-35680f356dfd'
+const dustImageId = 'photo-1503387762-592deb58ef4e'
+const finishedImageId = 'photo-1600607687920-4e2a09cf159d'
+const heroImage = unsplashImage(heroImageId, 1200)
+const heroImageSrcSet = [720, 960, 1200, 1440].map((width) => `${unsplashImage(heroImageId, width)} ${width}w`).join(', ')
+const dustImage = unsplashImage(dustImageId, 900)
+const dustImageSrcSet = [480, 720, 900, 1100].map((width) => `${unsplashImage(dustImageId, width)} ${width}w`).join(', ')
+const finishedImage = unsplashImage(finishedImageId, 1000)
+const finishedImageSrcSet = [560, 800, 1000, 1200].map((width) => `${unsplashImage(finishedImageId, width)} ${width}w`).join(', ')
 const quoteEndpoint = 'https://shynlicleaningservice.com/quote'
 
 function currentPath() {
@@ -898,7 +904,14 @@ function BidForm() {
 function Hero() {
   return (
     <section className="hero" id="top">
-      <img src={heroImage} alt="Construction site ready for final cleaning" className="hero__image" />
+      <img
+        src={heroImage}
+        srcSet={heroImageSrcSet}
+        sizes="100vw"
+        alt="Construction site ready for final cleaning"
+        className="hero__image"
+        fetchPriority="high"
+      />
       <div className="hero__overlay" />
       <div className="hero__content">
         <div className="hero__copy">
@@ -963,7 +976,14 @@ function ScopeSection() {
   return (
     <section className="section scope-section" id="scope">
       <div className="scope-media">
-        <img src={dustImage} alt="Interior renovation space before final cleaning" />
+        <img
+          src={dustImage}
+          srcSet={dustImageSrcSet}
+          sizes="(max-width: 900px) calc(100vw - 32px), 50vw"
+          alt="Interior renovation space before final cleaning"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="media-label">Dust-heavy renovation context</div>
       </div>
       <div className="scope-copy">
@@ -1060,7 +1080,14 @@ function ProofSection() {
 function VisualBreak() {
   return (
     <section className="visual-break">
-      <img src={finishedImage} alt="Finished interior after detailed cleaning" />
+      <img
+        src={finishedImage}
+        srcSet={finishedImageSrcSet}
+        sizes="100vw"
+        alt="Finished interior after detailed cleaning"
+        loading="lazy"
+        decoding="async"
+      />
       <div>
         <span>Final result</span>
         <h2>From dusty jobsite to handoff-ready space.</h2>
