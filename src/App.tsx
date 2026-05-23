@@ -25,18 +25,12 @@ type SeoPage = {
   faq: Array<{ q: string; a: string }>
 }
 
-const unsplashImage = (id: string, width: number, quality = 62) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=${quality}`
-
-const heroImageId = 'photo-1504307651254-35680f356dfd'
-const dustImageId = 'photo-1503387762-592deb58ef4e'
-const finishedImageId = 'photo-1600607687920-4e2a09cf159d'
-const heroImage = unsplashImage(heroImageId, 1200)
-const heroImageSrcSet = [720, 960, 1200, 1440].map((width) => `${unsplashImage(heroImageId, width)} ${width}w`).join(', ')
-const dustImage = unsplashImage(dustImageId, 900)
-const dustImageSrcSet = [480, 720, 900, 1100].map((width) => `${unsplashImage(dustImageId, width)} ${width}w`).join(', ')
-const finishedImage = unsplashImage(finishedImageId, 1000)
-const finishedImageSrcSet = [560, 800, 1000, 1200].map((width) => `${unsplashImage(finishedImageId, width)} ${width}w`).join(', ')
+const heroImage = '/images/post-construction-hero.webp'
+const heroImageSrcSet = '/images/post-construction-hero-720.webp 720w, /images/post-construction-hero.webp 1440w'
+const dustImage = '/images/renovation-dust.webp'
+const dustImageSrcSet = '/images/renovation-dust-480.webp 480w, /images/renovation-dust.webp 720w'
+const finishedImage = '/images/finished-interior.webp'
+const finishedImageSrcSet = '/images/finished-interior-560.webp 560w, /images/finished-interior.webp 1200w'
 const quoteEndpoint = 'https://shynlicleaningservice.com/quote'
 
 function currentPath() {
