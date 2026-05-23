@@ -43,6 +43,18 @@ for (const path of urls) {
     continue
   }
 
+  if (path === '/') {
+    await page.mouse.wheel(0, 600)
+  }
+
+  await page.waitForFunction(
+    () =>
+      document.querySelector('h1') &&
+      document.querySelector('script[type="application/ld+json"]') &&
+      document.body.innerText.trim().split(/\s+/).length > 50,
+    { timeout: 10000 },
+  )
+
   const data = await page.evaluate(() => {
     const bodyText = document.body.innerText.replace(/\s+/g, ' ').trim()
     const internalLinks = [...document.querySelectorAll('a[href]')]

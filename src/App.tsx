@@ -874,9 +874,6 @@ function BidForm() {
         <Button type="submit" size="lg">
           Send project details <span className="icon-arrow" aria-hidden="true">-&gt;</span>
         </Button>
-        <Button type="button" variant="secondary" size="icon" aria-label="Attach jobsite photos" title="Attach jobsite photos">
-          <span className="icon-glyph" aria-hidden="true">↑</span>
-        </Button>
       </div>
     </form>
   )
@@ -1407,7 +1404,7 @@ function Footer({ legal = false }: { legal?: boolean }) {
             <a href={quoteHref({ cta: 'footer-contact' })}>Request a project quote</a>
             <a href="/service-areas">View service areas</a>
             <a href="/what-is-included-in-post-construction-cleaning">See what is included</a>
-            <a href={legal ? '/' : '#top'}>Back to top</a>
+            <a href="#top">Back to top</a>
           </div>
         </div>
       </div>
@@ -1430,6 +1427,23 @@ function App() {
   const legalPage = legalPages[path as keyof typeof legalPages]
   const [seoPage, setSeoPage] = useState<SeoPage | null | undefined>(undefined)
   const shouldLoadSeoPage = !legalPage && path !== '/'
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      if (!window.location.hash) return
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(window.location.hash.slice(1))?.scrollIntoView()
+      })
+    }
+
+    scrollToHash()
+    window.addEventListener('hashchange', scrollToHash)
+
+    return () => {
+      window.removeEventListener('hashchange', scrollToHash)
+    }
+  }, [])
 
   useEffect(() => {
     if (!shouldLoadSeoPage) {

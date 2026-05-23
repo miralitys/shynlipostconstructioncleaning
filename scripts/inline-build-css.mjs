@@ -42,10 +42,11 @@ if (moduleScriptMatch) {
     script.src = src;
     document.head.appendChild(script);
   };
-  if (window.location.pathname === '/') {
+  if (window.location.pathname === '/' && !window.location.hash) {
     window.addEventListener('keydown', load, { once: true });
     window.addEventListener('pointerdown', load, { once: true });
     window.addEventListener('pointermove', load, { once: true });
+    window.addEventListener('hashchange', load, { once: true });
     window.addEventListener('scroll', load, { once: true, passive: true });
     window.addEventListener('touchstart', load, { once: true, passive: true });
     window.addEventListener('wheel', load, { once: true, passive: true });
