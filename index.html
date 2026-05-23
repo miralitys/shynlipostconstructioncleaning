@@ -57,13 +57,22 @@
     <div id="root">
       <section class="hero initial-home-hero" id="top" aria-label="Shynli Post-Construction Cleaning">
         <img
-          src="/images/post-construction-hero.avif"
-          srcset="/images/post-construction-hero-720.avif 720w, /images/post-construction-hero.avif 1200w"
+          data-src="/images/post-construction-hero.avif"
+          data-srcset="/images/post-construction-hero-720.avif 720w, /images/post-construction-hero.avif 1200w"
           sizes="100vw"
           alt="Construction site ready for final cleaning"
           class="hero__image"
-          fetchpriority="high"
         />
+        <script>
+          ;(() => {
+            if (window.location.pathname !== '/') return
+            const image = document.querySelector('.initial-home-hero .hero__image')
+            if (!image) return
+            image.src = image.dataset.src
+            image.srcset = image.dataset.srcset
+            image.fetchPriority = 'high'
+          })()
+        </script>
         <div class="hero__overlay"></div>
         <div class="hero__content">
           <div class="hero__copy">
