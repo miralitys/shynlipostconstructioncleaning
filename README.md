@@ -25,7 +25,9 @@ npm run dev
 - Build command: `npm ci && npm run build`
 - Publish directory: `dist`
 - Custom domain: `shynlipostconstructioncleaning.com`
-- SPA fallback: Render rewrite `/*` to `/index.html`
+- Static SEO routes are prerendered into directory `index.html` files.
+- Render redirects clean URLs without a trailing slash to their matching slash URL before the SPA fallback.
+- SPA fallback: Render rewrite `/*` to `/index.html` for any route that does not have a static resource.
 
 ## Notes
 
