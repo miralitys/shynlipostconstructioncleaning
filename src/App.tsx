@@ -15,8 +15,8 @@ type SeoPage = {
   faq: Array<{ q: string; a: string }>
 }
 
-const heroImage = '/images/post-construction-hero.webp'
-const heroImageSrcSet = '/images/post-construction-hero-720.webp 720w, /images/post-construction-hero.webp 1440w'
+const heroImage = '/images/post-construction-hero.avif'
+const heroImageSrcSet = '/images/post-construction-hero-720.avif 720w, /images/post-construction-hero.avif 1200w'
 const dustImage = '/images/renovation-dust.webp'
 const dustImageSrcSet = '/images/renovation-dust-480.webp 480w, /images/renovation-dust.webp 720w'
 const finishedImage = '/images/finished-interior.webp'
