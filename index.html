@@ -8,10 +8,44 @@
       name="description"
       content="Shynli Post-Construction Cleaning helps prepare renovated and newly finished spaces for walkthrough, listing, and move-in."
     />
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85"
+      fetchpriority="high"
+    />
     <title>Shynli Post-Construction Cleaning | Inspection-ready final cleans</title>
+    <script>
+      document.documentElement.dataset.route = window.location.pathname === '/' ? 'home' : 'inner'
+    </script>
+    <style>
+      html[data-route='inner'] .initial-home-hero {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <section class="hero initial-home-hero" id="top" aria-label="Shynli Post-Construction Cleaning">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85"
+          alt="Construction site ready for final cleaning"
+          class="hero__image"
+          fetchpriority="high"
+        />
+        <div class="hero__overlay"></div>
+        <div class="hero__content">
+          <div class="hero__copy">
+            <span class="badge hero-badge">Post-construction cleaning</span>
+            <h1>Inspection-ready final cleans for closeout, walkthrough, and move-in.</h1>
+            <p>
+              Detailed cleaning after remodels, build-outs, and construction work. We remove the dust, reset the
+              surfaces, and help the space feel ready to show.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

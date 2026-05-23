@@ -17,7 +17,16 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { cities, publicRoutes, seoPages, serviceModifiers, slugify, type SeoPage } from './seo-pages'
+
+type SeoPage = {
+  path: string
+  title: string
+  eyebrow: string
+  intro: string
+  category: 'core' | 'city' | 'city-service' | 'intent' | 'project' | 'support'
+  bullets: string[]
+  faq: Array<{ q: string; a: string }>
+}
 
 const heroImage =
   'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2200&q=85'
@@ -132,6 +141,24 @@ const serviceAreaGroups = [
     cities: ['Villa Park', 'Warrenville', 'Wayne', 'West Chicago', 'Westmont', 'Wheaton', 'Willowbrook', 'Winfield', 'Wood Dale', 'Woodridge', 'Yorkville'],
   },
 ]
+
+const cities = serviceAreaGroups.flatMap((group) => group.cities)
+
+const serviceModifiers = [
+  { slug: 'post-construction-cleaning', name: 'Post-construction cleaning' },
+  { slug: 'final-cleaning', name: 'Final cleaning' },
+  { slug: 'after-renovation-cleaning', name: 'After-renovation cleaning' },
+  { slug: 'construction-dust-cleaning', name: 'Construction dust cleaning' },
+  { slug: 'touch-up-cleaning', name: 'Touch-up cleaning' },
+]
+
+function slugify(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+}
 
 const questions = [
   {
@@ -1399,8 +1426,28 @@ function Footer({ legal = false }: { legal?: boolean }) {
 function App() {
   const path = window.location.pathname.replace(/\/$/, '') || '/'
   const legalPage = legalPages[path as keyof typeof legalPages]
-  const seoPage = seoPages.find((page) => page.path === path)
-  usePageMeta(!legalPage && !seoPage)
+  const [seoPage, setSeoPage] = useState<SeoPage | null | undefined>(undefined)
+  const shouldLoadSeoPage = !legalPage && path !== '/'
+
+  useEffect(() => {
+    if (!shouldLoadSeoPage) {
+      return
+    }
+
+    let active = true
+
+    import('./seo-pages').then(({ seoPages }) => {
+      if (active) {
+        setSeoPage(seoPages.find((page) => page.path === path) ?? null)
+      }
+    })
+
+    return () => {
+      active = false
+    }
+  }, [path, shouldLoadSeoPage])
+
+  usePageMeta(path === '/' || (!legalPage && seoPage === null))
 
   if (legalPage) {
     return (
@@ -1426,6 +1473,16 @@ function App() {
     )
   }
 
+  if (shouldLoadSeoPage && seoPage === undefined) {
+    return (
+      <>
+        <Header legal />
+        <main />
+        <Footer legal />
+      </>
+    )
+  }
+
   return (
     <>
       <Header />
@@ -1444,7 +1501,5 @@ function App() {
     </>
   )
 }
-
-export { publicRoutes }
 
 export default App
