@@ -127,6 +127,27 @@ const serviceAreaGroups = [
   },
 ]
 
+const guideHighlights = [
+  {
+    href: '/guides/why-construction-dust-keeps-coming-back',
+    eyebrow: 'Dust reset guide',
+    title: 'Why construction dust keeps coming back',
+    copy: 'What causes fine renovation dust to settle again after cleaning, and when vents, filters, or punch work may still be involved.',
+  },
+  {
+    href: '/guides/cleaning-after-contractors-left',
+    eyebrow: 'Homeowner guide',
+    title: 'Cleaning after contractors left a mess',
+    copy: 'How to separate normal post-construction cleaning from heavy debris, damage, and unresolved punch-list work.',
+  },
+  {
+    href: '/guides/what-to-clean-before-final-payment-to-contractor',
+    eyebrow: 'Walkthrough guide',
+    title: 'What to clean before final contractor payment',
+    copy: 'A practical way to make the work visible before walkthrough without hiding issues that should stay on the punch list.',
+  },
+]
+
 const questions = [
   {
     q: 'When should post-construction cleaning happen?',
@@ -365,6 +386,46 @@ function ProofSection() {
   )
 }
 
+function GuidePreviewSection() {
+  return (
+    <section className="section guide-preview-section">
+      <div className="areas-head">
+        <div>
+          <div className="section-kicker">Guides</div>
+          <h2>Answers for the messy questions after construction work.</h2>
+        </div>
+        <p>
+          These guides are written for the real decisions customers make before a final clean: dust that keeps
+          returning, contractor cleanup, walkthrough timing, and rooms that need to be usable again.
+        </p>
+      </div>
+      <div className="guide-card-grid">
+        {guideHighlights.map((guide) => (
+          <article className="guide-card" key={guide.href}>
+            <div>
+              <span>{guide.eyebrow}</span>
+              <h3>
+                <a href={guide.href}>{guide.title}</a>
+              </h3>
+              <p>{guide.copy}</p>
+            </div>
+            <div className="guide-card-meta">
+              <a href={guide.href}>
+                Read guide <span className="icon-arrow" aria-hidden="true">-&gt;</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="guide-preview-more">
+        <a href="/guides">
+          View all guides <span className="icon-arrow" aria-hidden="true">-&gt;</span>
+        </a>
+      </div>
+    </section>
+  )
+}
+
 function VisualBreak() {
   return (
     <section className="visual-break">
@@ -440,6 +501,7 @@ export default function HomePage() {
         <ScopeSection />
         <ServiceAreasSection />
         <ProofSection />
+        <GuidePreviewSection />
         <VisualBreak />
         <FaqSection />
         <FinalCta />

@@ -1001,6 +1001,269 @@ textarea {
   white-space: nowrap;
 }
 
+.guide-page {
+  width: min(1160px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 132px 0 72px;
+}
+
+.guide-hub {
+  display: grid;
+  gap: 48px;
+}
+
+.guide-hero {
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-hero h1 {
+  max-width: none;
+  margin: 18px 0;
+  color: var(--graphite);
+  font-size: 5rem;
+  line-height: 0.94;
+}
+
+.guide-hero p {
+  max-width: 920px;
+  margin: 0;
+  color: #5f665e;
+  font-size: 1.12rem;
+  line-height: 1.65;
+}
+
+.guide-meta,
+.guide-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.guide-meta span,
+.guide-meta time,
+.guide-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 7px 10px;
+  color: var(--graphite);
+  background: var(--paper-2);
+  border: 1px solid rgba(17, 20, 15, 0.1);
+  font-size: 0.82rem;
+  font-weight: 820;
+}
+
+.guide-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.guide-hub-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 38px;
+  padding: 0 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-hub-intro h2 {
+  margin: 0;
+  color: var(--graphite);
+  font-size: 2.75rem;
+  line-height: 1.02;
+}
+
+.guide-hub-intro p {
+  margin: 0;
+  color: #5f665e;
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.guide-hub-intro p + p {
+  margin-top: 16px;
+}
+
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 28px;
+  min-height: 330px;
+  padding: 28px;
+  background: #fffdf8;
+  border: 1px solid rgba(17, 20, 15, 0.12);
+}
+
+.guide-card span,
+.guide-sidebar .section-kicker {
+  color: #8b7010;
+  font-size: 0.76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.guide-card h2,
+.guide-card h3 {
+  margin: 14px 0 12px;
+  color: var(--graphite);
+  font-size: 2rem;
+  line-height: 1.02;
+}
+
+.guide-card p {
+  margin: 0;
+  color: #5f665e;
+  line-height: 1.65;
+}
+
+.guide-card-meta {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guide-card-meta a,
+.guide-inline-links a,
+.guide-sidebar-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 42px;
+  padding: 10px 12px;
+  color: var(--graphite);
+  background: var(--safety);
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.guide-article {
+  display: grid;
+  gap: 42px;
+}
+
+.guide-article-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 330px);
+  gap: 34px;
+  align-items: start;
+}
+
+.guide-main {
+  min-width: 0;
+}
+
+.guide-short-answer,
+.guide-section,
+.guide-checklist {
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-short-answer {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.36fr) minmax(0, 1fr);
+  gap: 28px;
+}
+
+.guide-short-answer p,
+.guide-section p,
+.guide-sidebar p {
+  margin: 0;
+  color: #5f665e;
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+.guide-section h2,
+.guide-checklist h2,
+.guide-sidebar h2 {
+  margin: 0 0 18px;
+  color: var(--graphite);
+  font-size: 2.35rem;
+  line-height: 1.02;
+}
+
+.guide-section p + p {
+  margin-top: 16px;
+}
+
+.guide-inline-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.guide-checklist .checklist {
+  margin-top: 20px;
+}
+
+.guide-related-pages {
+  padding-top: 38px;
+}
+
+.guide-faq {
+  max-width: none;
+}
+
+.guide-sidebar {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+  color: var(--graphite);
+  background: #eee5d2;
+  border: 1px solid rgba(17, 20, 15, 0.12);
+}
+
+.guide-sidebar h2 {
+  font-size: 1.75rem;
+}
+
+.guide-sidebar-links {
+  display: grid;
+  gap: 8px;
+}
+
+.guide-sidebar-links a {
+  background: #fffdf8;
+  border: 1px solid rgba(17, 20, 15, 0.12);
+}
+
+.guide-sidebar-links a:last-child {
+  color: #fffaf0;
+  background: var(--graphite);
+}
+
+.guide-final-cta {
+  margin-top: 0;
+}
+
+.guide-preview-section .guide-card-grid {
+  margin-top: 26px;
+}
+
+.guide-preview-more {
+  display: flex;
+  justify-content: end;
+  margin-top: 16px;
+}
+
+.guide-preview-more a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 11px 14px;
+  color: #fffaf0;
+  background: var(--graphite);
+  font-weight: 850;
+}
+
 .final-cta {
   display: flex;
   align-items: center;
@@ -1170,7 +1433,11 @@ textarea {
   .hero__content,
   .split,
   .scope-section,
-  .seo-copy-band { grid-template-columns: 1fr; }
+  .seo-copy-band,
+  .guide-hub-intro,
+  .guide-article-shell,
+  .guide-short-answer { grid-template-columns: 1fr; }
+  .guide-sidebar { position: static; }
   .hero,
   .hero__content {
     min-height: auto;
@@ -1184,7 +1451,8 @@ textarea {
   .proof-grid,
   .audience-grid,
   .areas-grid,
-  .seo-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .seo-link-grid,
+  .guide-inline-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .areas-head {
     grid-template-columns: 1fr;
     gap: 14px;
@@ -1282,8 +1550,18 @@ textarea {
     width: min(100% - 20px, 1160px);
     padding: 100px 0 54px;
   }
+  .guide-page {
+    width: min(100% - 20px, 1160px);
+    padding: 100px 0 54px;
+  }
   .seo-hero h1 {
     font-size: clamp(2.55rem, 13vw, 3.7rem);
+  }
+  .guide-hero h1 {
+    font-size: 3.1rem;
+  }
+  .guide-hub-intro h2 {
+    font-size: 2.15rem;
   }
   .seo-grid {
     grid-template-columns: 1fr;
@@ -1299,7 +1577,9 @@ textarea {
   }
   .seo-detail-grid,
   .seo-local-grid,
-  .seo-link-grid {
+  .seo-link-grid,
+  .guide-card-grid,
+  .guide-inline-links {
     grid-template-columns: 1fr;
   }
   .seo-detail-grid {
@@ -1317,6 +1597,14 @@ textarea {
     align-items: start;
     flex-direction: column;
     padding: 24px;
+  }
+  .guide-card,
+  .guide-sidebar {
+    padding: 22px;
+  }
+  .guide-section h2,
+  .guide-checklist h2 {
+    font-size: 2rem;
   }
   .seo-related a {
     white-space: normal;

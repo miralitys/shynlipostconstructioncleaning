@@ -36,7 +36,7 @@ const transpiledSeo = ts.transpileModule(seoSource, {
 }).outputText
 
 const seoModule = await import(`data:text/javascript;base64,${Buffer.from(transpiledSeo).toString('base64')}`)
-const { seoPages } = seoModule
+const { seoPages, guidePages } = seoModule
 
 function escapeHtml(value) {
   return String(value)
@@ -122,6 +122,78 @@ function pageSchema(page) {
   }
 }
 
+function guideHubSchema(pages) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Post-construction cleaning guides',
+    description:
+      'Human answers to common post-construction cleaning questions from homeowners, remodelers, and property teams.',
+    url: `${domain}/guides`,
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: pages.map((page, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: page.h1,
+        url: `${domain}${page.path}`,
+      })),
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: domain },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: `${domain}/guides` },
+      ],
+    },
+  }
+}
+
+function guideArticleSchema(page) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: page.h1,
+        description: page.description,
+        datePublished: '2026-06-16',
+        dateModified: '2026-06-16',
+        author: {
+          '@type': 'Organization',
+          name: 'Shynli Post-Construction Cleaning',
+          url: domain,
+        },
+        publisher: {
+          '@type': 'LocalBusiness',
+          name: 'Shynli Post-Construction Cleaning',
+          url: domain,
+          telephone: '+1-630-812-7077',
+        },
+        mainEntityOfPage: `${domain}${page.path}`,
+        articleSection: 'Post-construction cleaning guides',
+        keywords: page.keywords.join(', '),
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: page.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a },
+        })),
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: domain },
+          { '@type': 'ListItem', position: 2, name: 'Guides', item: `${domain}/guides` },
+          { '@type': 'ListItem', position: 3, name: page.h1, item: `${domain}${page.path}` },
+        ],
+      },
+    ],
+  }
+}
+
 function categoryParagraphs(page) {
   const city = page.title.match(/ in (.+)$/)?.[1]
 
@@ -195,6 +267,50 @@ function relatedLinks(page) {
   ]
 }
 
+function relatedGuideLinks(path) {
+  const allGuides = [
+    ['/guides/why-construction-dust-keeps-coming-back', 'Why construction dust keeps coming back'],
+    ['/guides/cleaning-after-contractors-left', 'Cleaning after contractors left a mess'],
+    ['/guides/can-you-live-at-home-during-renovation-cleaning', 'Living at home during renovation cleaning'],
+    ['/guides/what-to-clean-before-final-payment-to-contractor', 'What to clean before final contractor payment'],
+    ['/guides/post-renovation-cleaning-before-baby-pets-guests', 'Cleaning before babies, pets, or guests'],
+  ]
+
+  const map = {
+    '/post-construction-cleaning': [0, 1, 3],
+    '/post-construction-cleaning-faq': [0, 2, 4],
+    '/construction-dust-cleaning': [0, 2, 4],
+    '/drywall-dust-cleaning': [0, 2],
+    '/renovation-dust-cleaning': [0, 2, 4],
+    '/vent-cleaning-after-renovation-dust': [0, 4],
+    '/after-renovation-cleaning': [2, 4, 0],
+    '/post-renovation-house-cleaning': [2, 4],
+    '/construction-cleaning-for-homeowners': [1, 2, 4],
+    '/residential-post-construction-cleaning': [2, 4],
+    '/cleaning-after-remodel': [1, 2, 4],
+    '/remodel-cleanup-service': [1, 2],
+    '/contractor-cleanup-service': [1, 3],
+    '/what-is-not-included-in-post-construction-cleaning': [1, 4],
+    '/cleaning-before-owner-walkthrough': [3, 1],
+    '/cleaning-before-final-inspection': [3, 0],
+    '/punch-list-cleaning': [3, 1],
+    '/handoff-cleaning': [3, 0],
+    '/cleaning-before-move-in': [4, 2, 0],
+    '/move-in-ready-construction-cleaning': [4, 2],
+    '/what-is-included-in-post-construction-cleaning': [4, 1],
+    '/post-construction-cleaning-cost': [1, 3, 0],
+    '/post-construction-cleaning-checklist': [3, 4],
+    '/construction-cleaning-checklist': [0, 3, 4],
+  }
+
+  if (map[path]) return map[path].map((index) => allGuides[index])
+  if (path.includes('dust')) return [allGuides[0], allGuides[4]]
+  if (path.includes('remodel') || path.includes('renovation')) return [allGuides[1], allGuides[2], allGuides[4]]
+  if (path.includes('walkthrough') || path.includes('inspection') || path.includes('handoff')) return [allGuides[3], allGuides[0]]
+  if (path.includes('homeowner') || path.includes('move-in')) return [allGuides[2], allGuides[4]]
+  return []
+}
+
 function deferredLoader() {
   return `<script data-deferred-app-loader>
 (() => {
@@ -220,7 +336,7 @@ function deferredLoader() {
 function header(path) {
   return `<header class="site-header">
     <a href="/" class="brand" aria-label="Shynli Post-Construction Cleaning home"><span class="brand-mark">S</span><span>Shynli Post</span></a>
-    <nav aria-label="Primary navigation"><a href="/#phases">Phases</a><a href="/#scope">Scope</a><a href="/#areas">Areas</a><a href="/#proof">Proof</a><a href="${escapeHtml(quoteHref(path, { cta: 'header-nav' }))}">Quote</a></nav>
+    <nav aria-label="Primary navigation"><a href="/#phases">Phases</a><a href="/#scope">Scope</a><a href="/#areas">Areas</a><a href="/#proof">Proof</a><a href="/guides">Guides</a><a href="${escapeHtml(quoteHref(path, { cta: 'header-nav' }))}">Quote</a></nav>
     <a class="header-cta" href="${escapeHtml(quoteHref(path, { cta: 'header-bid' }))}">Request a bid</a>
   </header>`
 }
@@ -235,9 +351,9 @@ function footer(path) {
         <div class="footer-trust"><span>Insured crew</span><span>Chicagoland service area</span></div>
       </div>
       <div class="footer-links">
-        <div><h3>Services</h3><a href="/rough-cleaning">Rough cleaning</a><a href="/final-cleaning">Final cleaning</a><a href="/touch-up-cleaning">Touch-up cleaning</a><a href="/after-renovation-cleaning">After-renovation dust removal</a></div>
+        <div><h3>Services</h3><a href="/rough-cleaning">Rough cleaning</a><a href="/final-cleaning">Final cleaning</a><a href="/touch-up-cleaning">Touch-up cleaning</a><a href="/after-renovation-cleaning">After-renovation dust removal</a><a href="/guides">Post-construction guides</a></div>
         <div><h3>For</h3><a href="/construction-cleaning-for-contractors">General contractors</a><a href="/remodeler-final-cleaning">Remodelers</a><a href="/property-manager-construction-cleaning">Property teams</a><a href="/construction-cleaning-for-homeowners">Homeowners after renovation</a></div>
-        <div><h3>Contact</h3><a href="tel:+16308127077">+1 (630) 812-7077</a><a href="${escapeHtml(quoteHref(path, { cta: 'footer-contact' }))}">Request a project quote</a><a href="/service-areas">View service areas</a><a href="/what-is-included-in-post-construction-cleaning">See what is included</a><a href="#top">Back to top</a></div>
+        <div><h3>Contact</h3><a href="tel:+16308127077">+1 (630) 812-7077</a><a href="${escapeHtml(quoteHref(path, { cta: 'footer-contact' }))}">Request a project quote</a><a href="/service-areas">View service areas</a><a href="/what-is-included-in-post-construction-cleaning">See what is included</a><a href="/guides">Read guides</a><a href="#top">Back to top</a></div>
       </div>
     </div>
     <div class="footer-bottom"><p>© 2026 Shynli Post-Construction Cleaning. All rights reserved.</p><div><a href="${escapeHtml(quoteHref(path, { cta: 'footer-bottom' }))}">Quote request</a><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a><a href="/cancellation-policy">Cancellation</a></div></div>
@@ -248,6 +364,7 @@ function renderPage(page) {
   const description = seoDescription(page)
   const paragraphs = categoryParagraphs(page)
   const links = relatedLinks(page)
+  const guideLinks = relatedGuideLinks(page.path)
   const schema = JSON.stringify(pageSchema(page)).replaceAll('</script', '<\\/script')
   const quote = quoteHref(page.path, { cta: 'seo-hero-bid' })
 
@@ -258,6 +375,7 @@ function renderPage(page) {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="robots" content="index,follow" />
     <title>${escapeHtml(page.title)} | Shynli Post-Construction Cleaning</title>
     <style>${shellStyle}</style>
     <style data-inlined-build-css>${inlinedCss}</style>
@@ -290,9 +408,141 @@ function renderPage(page) {
           </div>
           <section class="seo-detail-grid"><article><div class="section-kicker">Before we quote</div><h2>What makes the estimate accurate.</h2><p>The strongest quote requests include the service address or ZIP, rough square footage, photos of the current condition, the cleaning phase, the turnover date, parking and access notes, and any fragile or specialty surfaces. These details help us understand whether the space is ready for a rough clean, final clean, or touch-up visit.</p></article><article><div class="section-kicker">What customers get</div><h2>A practical closeout clean with clear boundaries.</h2><p>The clean can focus on top-down dust removal, visible surfaces, cabinets, shelves, drawers, fixtures, switches, ledges, trim, interior glass, tracks, sills, kitchens, bathrooms, appliances, vacuuming, mopping, and final detail work. Heavy debris hauling, hazardous cleanup, mold, asbestos, lead, and restoration work need a different specialty provider unless separately confirmed in writing.</p></article></section>
           <section class="seo-links"><div class="section-kicker">Related pages</div><h2>Continue planning the right construction clean.</h2><div class="seo-link-grid">${links.map(([href, label]) => `<a href="${escapeHtml(href)}"><span>${escapeHtml(label)}</span><span class="icon-arrow" aria-hidden="true">-&gt;</span></a>`).join('')}</div></section>
+          ${guideLinks.length ? `<section class="seo-links guide-crosslinks"><div class="section-kicker">Related guides</div><h2>Helpful answers before the final clean.</h2><div class="seo-link-grid">${guideLinks.map(([href, label]) => `<a href="${escapeHtml(href)}"><span>${escapeHtml(label)}</span><span class="icon-arrow" aria-hidden="true">-&gt;</span></a>`).join('')}<a href="/guides"><span>All post-construction cleaning guides</span><span class="icon-arrow" aria-hidden="true">-&gt;</span></a></div></section>` : ''}
           <section class="seo-faq"><div class="section-kicker">Common questions</div><h2>Questions before you book.</h2><div class="faq-list">${page.faq.map((item) => `<article class="border-b last:border-b-0"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></article>`).join('')}</div></section>
           <section class="seo-related"><div><div class="section-kicker">Next step</div><h2>Send photos and timing details.</h2><p>The fastest estimate path is a project ZIP, turnover date, rough square footage, cleaning phase, and a few photos showing dust, cabinets, glass, floors, and access conditions.</p></div><a href="${escapeHtml(quoteHref(page.path, { cta: 'seo-final-quote' }))}">Request a project quote <span class="icon-arrow" aria-hidden="true">-&gt;</span></a></section>
         </section>
+      </main>
+      ${footer(page.path)}
+    </div>
+  </body>
+</html>`
+}
+
+function renderGuideHub() {
+  const schema = JSON.stringify(guideHubSchema(guidePages)).replaceAll('</script', '<\\/script')
+  const quote = quoteHref('/guides', { cta: 'guides-hub-quote' })
+
+  return `<!doctype html>
+<html lang="en" data-route="inner">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Post-construction cleaning guides that answer real homeowner and contractor questions about dust, final walkthroughs, renovation cleanup, and move-in readiness." />
+    <meta name="keywords" content="post construction cleaning guides, renovation cleaning questions, construction dust cleaning guide, final cleaning guide, post renovation cleaning help" />
+    <meta name="robots" content="index,follow" />
+    <title>Post-Construction Cleaning Guides | Shynli Post-Construction Cleaning</title>
+    <style>${shellStyle}</style>
+    <style data-inlined-build-css>${inlinedCss}</style>
+    <link rel="canonical" href="${domain}/guides" />
+    <script type="application/ld+json" data-page-schema="true">${schema}</script>
+    ${deferredLoader()}
+  </head>
+  <body>
+    <div id="root">
+      ${header('/guides')}
+      <main>
+        <section class="guide-page guide-hub" id="top">
+          <div class="guide-hero">
+            <span class="badge hero-badge">Post-construction cleaning guides</span>
+            <h1>Human answers for the questions people ask before the final clean.</h1>
+            <p>Practical guides for homeowners, remodelers, property teams, and contractors dealing with renovation dust, final walkthroughs, contractor mess, move-in timing, and family-ready cleanup.</p>
+          </div>
+          <section class="guide-hub-intro">
+            <div><div class="section-kicker">Why these guides exist</div><h2>Post-construction cleaning questions usually show up when the project is almost done.</h2></div>
+            <div>
+              <p>Most customers do not start with a perfect cleaning scope. They start with a frustrating room: dust keeps coming back, the contractor says the work is finished, the family needs to sleep in the house, or the final walkthrough is close and the space still feels like a jobsite.</p>
+              <p>These guides are written around that moment. They explain what a cleaning crew can help with, what should stay on the contractor punch list, what details make a quote accurate, and when another specialty provider may be needed before ordinary post-construction cleaning is the right next step.</p>
+              <p>Use the guides to name the problem before you request a bid. If the issue is fine dust, start with the dust guide. If the contractor left a mess, document the condition first. If you are living in the home, plan the cleaning around bedrooms, bathrooms, kitchen use, pets, furniture, and daily traffic instead of expecting a vacant-house reset.</p>
+              <p>When you are ready to ask for pricing, send photos, square footage, the project ZIP, the cleaning deadline, and whether the clean supports move-in, owner walkthrough, listing photos, inspection, leasing, or final handoff. That context helps us recommend rough cleaning, final cleaning, touch-up cleaning, or a heavier renovation dust reset without overpromising.</p>
+              <p>If the project has sharp debris, heavy trash, exposed materials, water damage, lead, asbestos, mold, or anything that feels unsafe, treat that as a separate scope first. These articles help with normal post-construction cleaning decisions; they do not replace remediation, hauling, inspection, or contractor repair work when the site is not ready for cleaners.</p>
+              <p>When in doubt, send photos before moving dust, tools, or debris.</p>
+            </div>
+          </section>
+          <section class="guide-card-grid" aria-label="Post-construction cleaning guides">
+            ${guidePages
+              .map(
+                (page) => `<article class="guide-card">
+                  <div><span>${escapeHtml(page.eyebrow)}</span><h2><a href="${escapeHtml(page.path)}">${escapeHtml(page.h1)}</a></h2><p>${escapeHtml(page.summary)}</p></div>
+                  <div class="guide-card-meta"><span>${escapeHtml(page.readTime)}</span><a href="${escapeHtml(page.path)}">Read guide <span class="icon-arrow" aria-hidden="true">-&gt;</span></a></div>
+                </article>`,
+              )
+              .join('')}
+          </section>
+          <section class="seo-related">
+            <div><div class="section-kicker">Need a quote</div><h2>Send project photos and the handoff deadline.</h2><p>If the space is already dusty, unfinished, or close to walkthrough day, a few photos can tell us which cleaning phase fits best.</p></div>
+            <a href="${escapeHtml(quote)}">Request a project quote <span class="icon-arrow" aria-hidden="true">-&gt;</span></a>
+          </section>
+        </section>
+      </main>
+      ${footer('/guides')}
+    </div>
+  </body>
+</html>`
+}
+
+function renderGuideArticle(page) {
+  const schema = JSON.stringify(guideArticleSchema(page)).replaceAll('</script', '<\\/script')
+  const quote = quoteHref(page.path, { cta: 'guide-final-quote' })
+
+  return `<!doctype html>
+<html lang="en" data-route="inner">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="${escapeHtml(page.description)}" />
+    <meta name="keywords" content="${escapeHtml(page.keywords.join(', '))}" />
+    <meta name="robots" content="index,follow" />
+    <title>${escapeHtml(page.title)}</title>
+    <style>${shellStyle}</style>
+    <style data-inlined-build-css>${inlinedCss}</style>
+    <link rel="canonical" href="${domain}${page.path}" />
+    <script type="application/ld+json" data-page-schema="true">${schema}</script>
+    ${deferredLoader()}
+  </head>
+  <body>
+    <div id="root">
+      ${header(page.path)}
+      <main>
+        <article class="guide-page guide-article" id="top">
+          <div class="guide-article-shell">
+            <div class="guide-main">
+              <div class="guide-hero">
+                <span class="badge hero-badge">${escapeHtml(page.eyebrow)}</span>
+                <h1>${escapeHtml(page.h1)}</h1>
+                <p>${escapeHtml(page.summary)}</p>
+                <div class="guide-meta"><span>${escapeHtml(page.readTime)}</span><time datetime="2026-06-16">${escapeHtml(page.updated)}</time><span>${escapeHtml(page.sourceQuestion)}</span></div>
+              </div>
+              <section class="guide-short-answer"><div class="section-kicker">Short answer</div><p>${escapeHtml(page.shortAnswer)}</p></section>
+              ${page.sections
+                .map(
+                  (section) => `<section class="guide-section">
+                    <h2>${escapeHtml(section.title)}</h2>
+                    ${section.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
+                    ${
+                      section.links
+                        ? `<div class="guide-inline-links">${section.links.map((link) => `<a href="${escapeHtml(link.href)}"><span>${escapeHtml(link.label)}</span><span class="icon-arrow" aria-hidden="true">-&gt;</span></a>`).join('')}</div>`
+                        : ''
+                    }
+                  </section>`,
+                )
+                .join('')}
+              <section class="guide-checklist"><div class="section-kicker">Checklist</div><h2>${escapeHtml(page.checklistTitle)}</h2><div class="checklist">${page.checklist.map((item) => `<div class="checkline"><span>${escapeHtml(item)}</span></div>`).join('')}</div></section>
+              <section class="seo-links guide-related-pages"><div class="section-kicker">Related pages</div><h2>Keep planning the cleanup.</h2><div class="seo-link-grid">${page.related.map((link) => `<a href="${escapeHtml(link.href)}"><span>${escapeHtml(link.label)}</span><span class="icon-arrow" aria-hidden="true">-&gt;</span></a>`).join('')}<a href="/guides"><span>All guides</span><span class="icon-arrow" aria-hidden="true">-&gt;</span></a></div></section>
+              <section class="seo-faq guide-faq"><div class="section-kicker">Common questions</div><h2>Questions people ask before booking.</h2><div class="faq-list">${page.faq.map((item) => `<article class="border-b last:border-b-0"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></article>`).join('')}</div></section>
+            </div>
+            <aside class="guide-sidebar" aria-label="Guide planning links">
+              <div><div class="section-kicker">Plan the clean</div><h2>Get the scope clear before the crew arrives.</h2><p>Send the project ZIP, photos, square footage, dust level, access notes, and the date the space has to be ready.</p></div>
+              <div class="guide-sidebar-links"><a href="/post-construction-cleaning">Post-construction cleaning</a><a href="/post-construction-cleaning-cost">Cost guide</a><a href="/construction-cleaning-checklist">Cleaning checklist</a><a href="/post-construction-cleaning-faq">FAQ</a><a href="${escapeHtml(quoteHref(page.path, { cta: 'guide-sidebar-quote' }))}">Request a bid</a></div>
+            </aside>
+          </div>
+          <section class="seo-related guide-final-cta">
+            <div><div class="section-kicker">Ready to price it</div><h2>Send photos before the dust gets moved around again.</h2><p>A photo quote helps confirm whether the project needs rough cleaning, final cleaning, touch-up cleaning, or a heavier renovation dust reset.</p></div>
+            <a href="${escapeHtml(quote)}">Request a project quote <span class="icon-arrow" aria-hidden="true">-&gt;</span></a>
+          </section>
+        </article>
       </main>
       ${footer(page.path)}
     </div>
@@ -308,14 +558,22 @@ function routeCleanPath(path) {
   return resolve(distDir, `${path.replace(/^\//, '')}.html`)
 }
 
-for (const page of seoPages) {
-  const html = renderPage(page)
-  const indexPath = routeIndexPath(page.path)
-  const cleanPath = routeCleanPath(page.path)
+function writeRoute(path, html) {
+  const indexPath = routeIndexPath(path)
+  const cleanPath = routeCleanPath(path)
   mkdirSync(dirname(indexPath), { recursive: true })
   mkdirSync(dirname(cleanPath), { recursive: true })
   writeFileSync(indexPath, html)
   writeFileSync(cleanPath, html)
 }
 
-console.log(`Prerendered ${seoPages.length} SEO routes into dist/.`)
+for (const page of seoPages) {
+  writeRoute(page.path, renderPage(page))
+}
+
+writeRoute('/guides', renderGuideHub())
+for (const page of guidePages) {
+  writeRoute(page.path, renderGuideArticle(page))
+}
+
+console.log(`Prerendered ${seoPages.length} SEO routes and ${guidePages.length + 1} guide routes into dist/.`)
