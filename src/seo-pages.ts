@@ -824,7 +824,7 @@ export const publicRoutes = [
   '/privacy-policy',
   '/terms-of-service',
   '/cancellation-policy',
-  '/guides',
-  ...guidePages.map((page) => page.path),
+  '/guides/',
+  ...guidePages.map((page) => `${page.path}/`),
   ...seoPages.map((page) => page.path),
 ]

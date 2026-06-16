@@ -129,19 +129,19 @@ const serviceAreaGroups = [
 
 const guideHighlights = [
   {
-    href: '/guides/why-construction-dust-keeps-coming-back',
+    href: '/guides/why-construction-dust-keeps-coming-back/',
     eyebrow: 'Dust reset guide',
     title: 'Why construction dust keeps coming back',
     copy: 'What causes fine renovation dust to settle again after cleaning, and when vents, filters, or punch work may still be involved.',
   },
   {
-    href: '/guides/cleaning-after-contractors-left',
+    href: '/guides/cleaning-after-contractors-left/',
     eyebrow: 'Homeowner guide',
     title: 'Cleaning after contractors left a mess',
     copy: 'How to separate normal post-construction cleaning from heavy debris, damage, and unresolved punch-list work.',
   },
   {
-    href: '/guides/what-to-clean-before-final-payment-to-contractor',
+    href: '/guides/what-to-clean-before-final-payment-to-contractor/',
     eyebrow: 'Walkthrough guide',
     title: 'What to clean before final contractor payment',
     copy: 'A practical way to make the work visible before walkthrough without hiding issues that should stay on the punch list.',
@@ -418,7 +418,7 @@ function GuidePreviewSection() {
         ))}
       </div>
       <div className="guide-preview-more">
-        <a href="/guides">
+        <a href="/guides/">
           View all guides <span className="icon-arrow" aria-hidden="true">-&gt;</span>
         </a>
       </div>

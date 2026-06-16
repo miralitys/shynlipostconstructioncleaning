@@ -10,6 +10,12 @@ services:
       - shynlipostconstructioncleaning.com
     routes:
       - type: redirect
+        source: /guides/:slug
+        destination: /guides/:slug/
+      - type: redirect
+        source: /guides
+        destination: /guides/
+      - type: redirect
         source: /service-areas/:city/:service
         destination: /service-areas/:city/:service/
       - type: redirect

@@ -64,6 +64,10 @@ function quoteHref(extra: Record<string, string | undefined> = {}) {
   return `${quoteEndpoint}?${params.toString()}`
 }
 
+function guideHref(path: string) {
+  return path.endsWith('/') ? path : `${path}/`
+}
+
 const phaseSteps = [
   {
     title: 'Rough clean',
@@ -646,21 +650,21 @@ function guideHubSchema(pages: GuidePage[]) {
     name: 'Post-construction cleaning guides',
     description:
       'Human answers to common post-construction cleaning questions from homeowners, remodelers, and property teams.',
-    url: 'https://shynlipostconstructioncleaning.com/guides',
+    url: 'https://shynlipostconstructioncleaning.com/guides/',
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: pages.map((page, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         name: page.h1,
-        url: `https://shynlipostconstructioncleaning.com${page.path}`,
+        url: `https://shynlipostconstructioncleaning.com${guideHref(page.path)}`,
       })),
     },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shynlipostconstructioncleaning.com' },
-        { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://shynlipostconstructioncleaning.com/guides' },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://shynlipostconstructioncleaning.com/guides/' },
       ],
     },
   }
@@ -687,7 +691,7 @@ function guideArticleSchema(page: GuidePage) {
           url: 'https://shynlipostconstructioncleaning.com',
           telephone: '+1-630-812-7077',
         },
-        mainEntityOfPage: `https://shynlipostconstructioncleaning.com${page.path}`,
+        mainEntityOfPage: `https://shynlipostconstructioncleaning.com${guideHref(page.path)}`,
         articleSection: 'Post-construction cleaning guides',
         keywords: page.keywords.join(', '),
       },
@@ -703,12 +707,12 @@ function guideArticleSchema(page: GuidePage) {
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://shynlipostconstructioncleaning.com' },
-          { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://shynlipostconstructioncleaning.com/guides' },
+          { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://shynlipostconstructioncleaning.com/guides/' },
           {
             '@type': 'ListItem',
             position: 3,
             name: page.h1,
-            item: `https://shynlipostconstructioncleaning.com${page.path}`,
+            item: `https://shynlipostconstructioncleaning.com${guideHref(page.path)}`,
           },
         ],
       },
@@ -858,23 +862,23 @@ function relatedLinks(page: SeoPage) {
 function relatedGuideLinks(path: string): GuideLink[] {
   const allGuides = [
     {
-      href: '/guides/why-construction-dust-keeps-coming-back',
+      href: guideHref('/guides/why-construction-dust-keeps-coming-back'),
       label: 'Why construction dust keeps coming back',
     },
     {
-      href: '/guides/cleaning-after-contractors-left',
+      href: guideHref('/guides/cleaning-after-contractors-left'),
       label: 'Cleaning after contractors left a mess',
     },
     {
-      href: '/guides/can-you-live-at-home-during-renovation-cleaning',
+      href: guideHref('/guides/can-you-live-at-home-during-renovation-cleaning'),
       label: 'Living at home during renovation cleaning',
     },
     {
-      href: '/guides/what-to-clean-before-final-payment-to-contractor',
+      href: guideHref('/guides/what-to-clean-before-final-payment-to-contractor'),
       label: 'What to clean before final contractor payment',
     },
     {
-      href: '/guides/post-renovation-cleaning-before-baby-pets-guests',
+      href: guideHref('/guides/post-renovation-cleaning-before-baby-pets-guests'),
       label: 'Cleaning before babies, pets, or guests',
     },
   ]
@@ -971,7 +975,7 @@ function Header({ legal = false }: { legal?: boolean }) {
         <a href={anchor('#scope')}>Scope</a>
         <a href={anchor('#areas')}>Areas</a>
         <a href={anchor('#proof')}>Proof</a>
-        <a href="/guides">Guides</a>
+        <a href="/guides/">Guides</a>
         <a href={quoteHref({ cta: 'header-nav' })}>Quote</a>
       </nav>
       <Button asChild className="header-cta">
@@ -1208,7 +1212,7 @@ function SeoLandingPage({ page }: { page: SeoPage }) {
                 <span className="icon-arrow" aria-hidden="true">-&gt;</span>
               </a>
             ))}
-            <a href="/guides">
+            <a href="/guides/">
               <span>All post-construction cleaning guides</span>
               <span className="icon-arrow" aria-hidden="true">-&gt;</span>
             </a>
@@ -1259,7 +1263,7 @@ function GuideHubPage({ pages }: { pages: GuidePage[] }) {
         'final cleaning guide',
         'post renovation cleaning help',
       ],
-      path: '/guides',
+      path: '/guides/',
       schema: guideHubSchema(pages),
     })
   }, [pages])
@@ -1319,13 +1323,13 @@ function GuideHubPage({ pages }: { pages: GuidePage[] }) {
             <div>
               <span>{page.eyebrow}</span>
               <h2>
-                <a href={page.path}>{page.h1}</a>
+                <a href={guideHref(page.path)}>{page.h1}</a>
               </h2>
               <p>{page.summary}</p>
             </div>
             <div className="guide-card-meta">
               <span>{page.readTime}</span>
-              <a href={page.path}>
+              <a href={guideHref(page.path)}>
                 Read guide <span className="icon-arrow" aria-hidden="true">-&gt;</span>
               </a>
             </div>
@@ -1358,7 +1362,7 @@ function GuideArticlePage({ page }: { page: GuidePage }) {
       title: page.title,
       description: page.description,
       keywords: page.keywords,
-      path: page.path,
+      path: guideHref(page.path),
       schema: guideArticleSchema(page),
     })
   }, [page])
@@ -1424,7 +1428,7 @@ function GuideArticlePage({ page }: { page: GuidePage }) {
                   <span className="icon-arrow" aria-hidden="true">-&gt;</span>
                 </a>
               ))}
-              <a href="/guides">
+              <a href="/guides/">
                 <span>All guides</span>
                 <span className="icon-arrow" aria-hidden="true">-&gt;</span>
               </a>
@@ -1512,7 +1516,7 @@ function Footer({ legal = false }: { legal?: boolean }) {
             <a href="/final-cleaning">Final cleaning</a>
             <a href="/touch-up-cleaning">Touch-up cleaning</a>
             <a href="/after-renovation-cleaning">After-renovation dust removal</a>
-            <a href="/guides">Post-construction guides</a>
+            <a href="/guides/">Post-construction guides</a>
           </div>
           <div>
             <h3>For</h3>
@@ -1527,7 +1531,7 @@ function Footer({ legal = false }: { legal?: boolean }) {
             <a href={quoteHref({ cta: 'footer-contact' })}>Request a project quote</a>
             <a href="/service-areas">View service areas</a>
             <a href="/what-is-included-in-post-construction-cleaning">See what is included</a>
-            <a href="/guides">Read guides</a>
+            <a href="/guides/">Read guides</a>
             <a href="#top">Back to top</a>
           </div>
         </div>
