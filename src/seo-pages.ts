@@ -366,7 +366,7 @@ export const guidePages: GuidePage[] = [
         links: [
           { href: '/cleaning-before-move-in', label: 'Cleaning before move-in' },
           { href: '/cleaning-before-final-inspection', label: 'Cleaning before final inspection' },
-          { href: '/post-construction-cleaning-photo-quote', label: 'Photo quote' },
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
         ],
       },
     ],
@@ -402,7 +402,7 @@ export const guidePages: GuidePage[] = [
       { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
       { href: '/construction-cleaning-checklist', label: 'Construction cleaning checklist' },
       { href: '/post-construction-cleaning-faq', label: 'FAQ' },
-      { href: '/request-a-bid', label: 'Request a bid' },
+      { href: '/request-a-bid', label: 'Project intake' },
     ],
   },
   {
@@ -445,8 +445,8 @@ export const guidePages: GuidePage[] = [
           'Documentation also helps a cleaning company quote honestly. A few images can show whether the job is a normal final clean, a heavier renovation dust clean, or a project that needs debris removal before cleaners can safely work.',
         ],
         links: [
-          { href: '/post-construction-cleaning-photo-quote', label: 'Photo quote' },
-          { href: '/post-construction-cleaning-quote', label: 'Post-construction cleaning quote' },
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/post-construction-cleaning-quote', label: 'Cleaning scope page' },
         ],
       },
       {
@@ -505,7 +505,7 @@ export const guidePages: GuidePage[] = [
       { href: '/remodel-cleanup-service', label: 'Remodel cleanup service' },
       { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
       { href: '/post-construction-cleaning-faq', label: 'FAQ' },
-      { href: '/request-a-bid', label: 'Request a bid' },
+      { href: '/request-a-bid', label: 'Project intake' },
     ],
   },
   {
@@ -607,7 +607,7 @@ export const guidePages: GuidePage[] = [
       { href: '/construction-cleaning-for-homeowners', label: 'Cleaning for homeowners' },
       { href: '/construction-cleaning-checklist', label: 'Cleaning checklist' },
       { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
-      { href: '/request-a-bid', label: 'Request a bid' },
+      { href: '/request-a-bid', label: 'Project intake' },
     ],
   },
   {
@@ -711,7 +711,7 @@ export const guidePages: GuidePage[] = [
       { href: '/punch-list-cleaning', label: 'Punch-list cleaning' },
       { href: '/post-construction-cleaning-checklist', label: 'Post-construction cleaning checklist' },
       { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
-      { href: '/request-a-bid', label: 'Request a bid' },
+      { href: '/request-a-bid', label: 'Project intake' },
     ],
   },
   {
@@ -814,7 +814,527 @@ export const guidePages: GuidePage[] = [
       { href: '/cleaning-before-move-in', label: 'Cleaning before move-in' },
       { href: '/what-is-included-in-post-construction-cleaning', label: 'What is included' },
       { href: '/post-construction-cleaning-faq', label: 'FAQ' },
-      { href: '/request-a-bid', label: 'Request a bid' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/cleaning-after-punch-list-work-returns',
+    title: 'Cleaning After Punch-List Work Returns | Shynli Post-Construction Cleaning',
+    keywords: [
+      'cleaning after punch list work',
+      'post construction touch up cleaning',
+      'contractor returned after final clean',
+      'cleaning after trades return',
+      'dust after punch list repairs',
+    ],
+    description:
+      'What to do when a trade returns after the final clean, how to decide between a touch-up clean and a full reset, and what to document before the walkthrough.',
+    eyebrow: 'Touch-up timing guide',
+    h1: 'What to do when punch-list work creates dust after the final clean.',
+    summary:
+      'A returned trade can undo a clean room quickly. The right answer is usually a small, targeted touch-up, not starting the whole project over.',
+    readTime: '7 min read',
+    sourceQuestion: 'Do I need another cleaning after the contractor comes back for punch-list work?',
+    updated: 'June 20, 2026',
+    shortAnswer:
+      'If a contractor returns after the final clean for sanding, drilling, paint touch-ups, cabinet adjustments, flooring transitions, or fixture work, you may need a targeted touch-up clean. Start by documenting what changed, separating fresh dust from unfinished work, and deciding whether only the affected rooms need attention before the walkthrough, move-in, photos, or final handoff.',
+    sections: [
+      {
+        title: 'A returned trade can change the cleaning plan',
+        body: [
+          'Final cleaning works best after the dusty work is truly finished. When a painter, drywall finisher, flooring installer, cabinet installer, plumber, electrician, or handyman comes back afterward, even a short visit can put dust back on floors, counters, fixtures, baseboards, glass, stairs, and nearby rooms.',
+          'That does not always mean the first clean failed. It usually means the project moved backward for a moment. Treat the new mess as its own scope: what trade returned, where they worked, what surfaces were touched, and what deadline is now at risk.',
+        ],
+        links: [
+          { href: '/touch-up-cleaning', label: 'Touch-up cleaning' },
+          { href: '/punch-list-cleaning', label: 'Punch-list cleaning' },
+          { href: '/final-cleaning', label: 'Final cleaning' },
+        ],
+      },
+      {
+        title: 'Decide whether it is a touch-up or a full reset',
+        body: [
+          'A touch-up clean is usually enough when the return work was contained: one bathroom mirror, one patched wall, a few cabinet adjustments, a small trim repair, a light paint correction, or a dusty path from the entry to the work area.',
+          'A full reset may be needed if the trade sanded drywall, cut flooring indoors, opened dusty cavities, ran the HVAC during work, left doors open, or moved through several rooms. The difference matters because a touch-up can be priced and scheduled very differently from another whole-home clean.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+          { href: '/construction-dust-cleaning', label: 'Construction dust cleaning' },
+          { href: '/post-construction-cleaning-scheduling', label: 'Scheduling' },
+        ],
+      },
+      {
+        title: 'Protect the punch list before anyone wipes evidence away',
+        body: [
+          'Before cleaning the new dust, take photos of the affected areas. Show the repaired item, the dust or residue around it, the floor path, and any surfaces that were clean before the trade returned. This helps you keep cleaning separate from contractor completion.',
+          'Cleaning should make the space readable for the walkthrough, not hide unfinished work. Scratches, paint misses, loose hardware, damaged flooring, bad caulk, or missing trim are still punch-list items even if the surrounding dust is removed.',
+        ],
+        links: [
+          { href: '/cleaning-before-owner-walkthrough', label: 'Owner walkthrough cleaning' },
+          { href: '/guides/what-to-clean-before-final-payment-to-contractor/', label: 'Cleaning before final payment' },
+        ],
+      },
+      {
+        title: 'Schedule the touch-up close to the real finish',
+        body: [
+          'If more trades are still scheduled, wait if the deadline allows it. A touch-up is most useful when it happens after the last dusty return visit and before the moment that matters: listing photos, move-in, leasing, final inspection, owner walkthrough, or guest arrival.',
+          'When requesting a quote, say that this is a post-final-clean touch-up. Include the original clean date, the trade that returned, where they worked, photos of the new dust, and the date the space must look finished again.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/cleaning-before-final-inspection', label: 'Final inspection cleaning' },
+          { href: '/handoff-cleaning', label: 'Handoff cleaning' },
+        ],
+      },
+    ],
+    checklistTitle: 'Send these details for a punch-list touch-up quote',
+    checklist: [
+      'Which trade returned and what work they did after the final clean.',
+      'Which rooms, halls, stairs, floors, counters, glass, or fixtures were affected.',
+      'Whether any sanding, drilling, cutting, paint prep, or drywall patching happened.',
+      'Photos from before and after the return visit if you have both.',
+      'Whether more trades are still scheduled before the walkthrough.',
+      'The deadline: photos, move-in, inspection, owner handoff, or final payment review.',
+    ],
+    faq: [
+      {
+        q: 'Do I need to clean the whole home again after punch-list work?',
+        a: 'Not always. If the work was contained, a targeted touch-up may be enough. If dust traveled through several rooms or the HVAC moved it around, the scope may need to be larger.',
+      },
+      {
+        q: 'Is punch-list dust the contractor responsibility?',
+        a: 'It depends on what your agreement says and what happened during the return visit. Document the condition first, then decide whether to ask the contractor to address it or book your own touch-up clean.',
+      },
+      {
+        q: 'Should the touch-up happen before or after final walkthrough?',
+        a: 'Usually before the walkthrough if the dust blocks a fair inspection, but after the last scheduled dusty trade if possible.',
+      },
+      {
+        q: 'Can cleaners work around unfinished punch-list items?',
+        a: 'They can clean accessible surfaces, but unfinished work, damage, missing materials, or repairs should stay clearly documented and separate from the cleaning scope.',
+      },
+    ],
+    related: [
+      { href: '/post-construction-cleaning', label: 'Post-construction cleaning' },
+      { href: '/touch-up-cleaning', label: 'Touch-up cleaning' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/construction-cleaning-checklist', label: 'Construction cleaning checklist' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/how-to-photograph-construction-dust-for-cleaning-quote',
+    title: 'How To Photograph Construction Dust For A Cleaning Quote | Shynli',
+    keywords: [
+      'post construction cleaning photo quote',
+      'construction dust photos for quote',
+      'how to photograph renovation dust',
+      'cleaning quote photos',
+      'post renovation cleaning estimate photos',
+    ],
+    description:
+      'The photos to send for a better post-construction cleaning quote, including dust level, rooms, vents, cabinets, floors, access, debris, and deadline details.',
+    eyebrow: 'Quote photo guide',
+    h1: 'How to photograph construction dust before the cleaner prices the job.',
+    summary:
+      'Good photos show the dust, the rooms, the access, and the real scope. They help avoid a quote that is too light for the job.',
+    readTime: '7 min read',
+    sourceQuestion: 'What photos should I send for a post-construction cleaning estimate?',
+    updated: 'June 20, 2026',
+    shortAnswer:
+      'For a post-construction cleaning quote, send wide room photos, close-ups of dust and residue, floors, cabinet interiors, window tracks, vents, bathrooms, kitchens, stairs, glass, access points, and any leftover debris or active work areas. Add the ZIP code, approximate square footage, project type, deadline, and whether the home is vacant or occupied.',
+    sections: [
+      {
+        title: 'Start with wide photos so the room makes sense',
+        body: [
+          'Close-ups show dust, but wide photos show scale. Take one photo from each corner if you can, plus one from the doorway. This helps the cleaning company see room size, furniture, floor type, ceiling height, clutter, access paths, and whether the work area is contained or spread out.',
+          'For whole-home projects, include the main rooms first: kitchen, bathrooms, living areas, stairs, hallways, bedrooms, basement, entry, and the room where the work happened. If only one room was renovated but dust traveled elsewhere, show the nearby rooms too.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/post-construction-cleaning-quote', label: 'Cleaning scope page' },
+        ],
+      },
+      {
+        title: 'Then show the dust where it collects',
+        body: [
+          'Construction dust hides in predictable places: baseboards, window tracks, cabinet shelves, drawer interiors, vent covers, light fixtures, stair edges, floor transitions, trim, ledges, appliance faces, bathroom fixtures, and glass. Photograph those areas with enough distance to identify the surface.',
+          'If the dust is hard to see, use side light from a window or a phone flashlight at an angle. Do not wipe one clean stripe for the photo unless you want to show thickness. A real dust photo helps set the right cleaning level.',
+        ],
+        links: [
+          { href: '/construction-dust-cleaning', label: 'Construction dust cleaning' },
+          { href: '/window-track-cleaning-after-construction', label: 'Window track cleaning' },
+          { href: '/cabinet-interior-cleaning-after-construction', label: 'Cabinet interior cleaning' },
+        ],
+      },
+      {
+        title: 'Include anything that changes time or safety',
+        body: [
+          'Photos should also show what may slow or change the job: furniture, boxes, rugs, tools, ladders, paint cans, heavy debris, sharp scraps, unfinished rooms, active workers, locked areas, parking limits, stairs, elevators, and narrow access.',
+          'This is not about making the home look perfect before the cleaner sees it. It is about showing what the crew is actually walking into. A small room with clear floors can be faster than a larger room full of belongings, even if the dust level looks similar.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+          { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+        ],
+      },
+      {
+        title: 'Add the details photos cannot show',
+        body: [
+          'A quote also needs context: ZIP code, rough square footage, project type, phase of cleaning, deadline, occupancy, parking, access, whether utilities are on, and whether more trades will return. The same photo can mean different things if the home is vacant, occupied, being listed, or being turned over to an owner.',
+          'If you are not sure whether you need rough cleaning, final cleaning, or touch-up cleaning, say that. The photos can help identify the right phase before anyone promises a price or crew size.',
+        ],
+        links: [
+          { href: '/rough-cleaning', label: 'Rough cleaning' },
+          { href: '/final-cleaning', label: 'Final cleaning' },
+          { href: '/touch-up-cleaning', label: 'Touch-up cleaning' },
+        ],
+      },
+    ],
+    checklistTitle: 'Photo set that usually gives the cleanest quote',
+    checklist: [
+      'One wide photo from each main room and doorway.',
+      'Close-ups of dust on floors, ledges, baseboards, vents, window tracks, and cabinets.',
+      'Kitchen photos: counters, sink, cabinet interiors, appliance faces, backsplash, and floors.',
+      'Bathroom photos: vanity, mirror, shower glass, tub, fixtures, floor edges, and exhaust cover.',
+      'Access photos: entry, stairs, elevator, parking, tools, boxes, furniture, or leftover debris.',
+      'Deadline and purpose: move-in, listing photos, walkthrough, leasing, inspection, or handoff.',
+    ],
+    faq: [
+      {
+        q: 'Can I get a cleaning quote from photos only?',
+        a: 'Often yes for many residential post-construction projects, as long as the photos show scale, dust level, surfaces, access, and timing. Some complex jobs may still need more details.',
+      },
+      {
+        q: 'Should I clean before taking photos?',
+        a: 'No. Send the real condition. If you clean first, the quote may miss how much dust or residue is actually present.',
+      },
+      {
+        q: 'How many photos are enough?',
+        a: 'For a small project, 10 to 15 clear photos may be enough. For a whole home, send a full room set plus close-ups of the dustiest areas.',
+      },
+      {
+        q: 'What if the dust does not show well in photos?',
+        a: 'Use angled light, take close-ups of dark surfaces or ledges, and add a short note explaining where the dust feels heavy even if it is hard to see.',
+      },
+    ],
+    related: [
+      { href: '/post-construction-cleaning', label: 'Post-construction cleaning' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/post-construction-cleaning-quote', label: 'Cleaning scope page' },
+      { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/contractor-cleanup-vs-hiring-post-construction-cleaner',
+    title: 'Contractor Cleanup Vs Hiring A Post-Construction Cleaner | Shynli',
+    keywords: [
+      'contractor cleanup vs post construction cleaner',
+      'should contractor clean after remodel',
+      'hire cleaner after construction',
+      'post construction cleanup responsibility',
+      'professional final cleaning after contractor',
+    ],
+    description:
+      'How to decide whether to ask the contractor for cleanup, hire a post-construction cleaner, or separate punch-list corrections from final cleaning.',
+    eyebrow: 'Scope decision guide',
+    h1: 'Contractor cleanup vs hiring a post-construction cleaner: who should do what?',
+    summary:
+      'Contractor cleanup and professional final cleaning are not always the same thing. The difference affects cost, timing, and expectations.',
+    readTime: '8 min read',
+    sourceQuestion: 'Should my contractor clean up, or should I hire a separate cleaner?',
+    updated: 'June 20, 2026',
+    shortAnswer:
+      'Ask the contractor to remove their tools, heavy debris, unsafe scraps, and unfinished work issues. Hire a post-construction cleaner when the project needs detailed dust removal, floors, cabinets, fixtures, glass, baseboards, window tracks, bathrooms, kitchens, and move-in or walkthrough readiness. Check the contract first so cleanup responsibility is not guessed after the fact.',
+    sections: [
+      {
+        title: 'Contractor cleanup usually starts with jobsite responsibility',
+        body: [
+          'A contractor should normally leave the work area safe and remove their tools, packaging, major scraps, and obvious jobsite debris according to the agreement. If sharp materials, screws, broken tile, heavy bags, or active work hazards remain, that is not the same as asking for a detailed house clean.',
+          'If cleanup was promised in the contract, use the contract language when you ask about it. If the agreement only says broom clean or debris removal, detailed dusting of cabinets, windows, fixtures, floors, vents, trim, and bathrooms may not be included.',
+        ],
+        links: [
+          { href: '/contractor-cleanup-service', label: 'Contractor cleanup service' },
+          { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+        ],
+      },
+      {
+        title: 'Professional final cleaning is a different level of detail',
+        body: [
+          'Post-construction cleaning focuses on making the space usable and presentable after the building work: dust removal, floor detail, cabinet interiors, counters, fixtures, bathroom surfaces, kitchen surfaces, window tracks, baseboards, doors, trim, reachable vent covers, and glass.',
+          'That level of detail is often outside a trade worker daily cleanup. A plumber, painter, carpenter, or flooring installer may sweep their area, but that does not mean the entire home is ready for move-in, photos, leasing, or owner handoff.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning', label: 'Post-construction cleaning' },
+          { href: '/final-cleaning', label: 'Final cleaning' },
+          { href: '/construction-cleaning-checklist', label: 'Cleaning checklist' },
+        ],
+      },
+      {
+        title: 'Do not use cleaning to solve unfinished construction',
+        body: [
+          'Some problems look like cleaning at first but are really finish issues: grout haze that needs installer correction, paint overspray on delicate surfaces, missing caulk, scratched flooring, loose hardware, uneven drywall, damaged trim, or residue that requires specialty removal.',
+          'A cleaner can help reveal the work, but they should not be responsible for deciding whether a contractor finished properly. Document questionable areas before cleaning, then keep repair conversations separate from dust removal.',
+        ],
+        links: [
+          { href: '/guides/grout-haze-paint-overspray-and-renovation-residue/', label: 'Residue after renovation' },
+          { href: '/guides/what-to-clean-before-final-payment-to-contractor/', label: 'Cleaning before final payment' },
+        ],
+      },
+      {
+        title: 'The best plan is often both, in the right order',
+        body: [
+          'For many projects, the contractor finishes the work, removes jobsite debris, addresses obvious punch-list items, and leaves safe access. Then a cleaning crew performs the detailed final clean. If the contractor returns afterward, a smaller touch-up may follow.',
+          'When you request a bid, explain what the contractor has already cleaned, what still feels unfinished, and what the deadline is. That helps the cleaning quote stay focused instead of absorbing contractor tasks by accident.',
+        ],
+        links: [
+          { href: '/guides/cleaning-after-punch-list-work-returns/', label: 'Cleaning after punch-list returns' },
+          { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+          { href: '/request-a-bid', label: 'Project intake' },
+        ],
+      },
+    ],
+    checklistTitle: 'Use this split before deciding who should clean',
+    checklist: [
+      'Contractor: tools, heavy debris, unsafe scraps, active work materials, and unfinished repairs.',
+      'Contractor: punch-list issues, damage, missing caulk, paint defects, loose hardware, and finish corrections.',
+      'Cleaner: dust removal, floors, counters, cabinets, fixtures, glass, baseboards, trim, and reachable vents.',
+      'Cleaner: move-in, listing photo, walkthrough, leasing, or handoff readiness after the jobsite is safe.',
+      'Owner: contract review, documentation, access, deadline, and deciding whether more trades will return.',
+      'Quote request: photos, ZIP code, square footage, project phase, dust level, and timing.',
+    ],
+    faq: [
+      {
+        q: 'Is a contractor final clean the same as post-construction cleaning?',
+        a: 'Not always. Some contractors include a professional final clean, but others only promise broom cleaning or debris removal. Ask what surfaces and rooms are included.',
+      },
+      {
+        q: 'Should I hire a cleaner before the contractor is done?',
+        a: 'Usually no for final cleaning. If trades still need to sand, cut, paint, or install, wait or plan for a touch-up after they return.',
+      },
+      {
+        q: 'Can cleaners remove construction debris?',
+        a: 'Light trash may be handled if agreed, but heavy debris hauling, dumpsters, hazardous material, and unsafe scraps are not ordinary post-construction cleaning unless specifically confirmed.',
+      },
+      {
+        q: 'What should I ask my contractor before hiring a cleaner?',
+        a: 'Ask what cleanup is included, whether all trades are finished, whether any punch-list work remains, and whether the space will be safe and accessible for cleaners.',
+      },
+    ],
+    related: [
+      { href: '/post-construction-cleaning', label: 'Post-construction cleaning' },
+      { href: '/contractor-cleanup-service', label: 'Contractor cleanup service' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/hvac-dust-after-renovation-cleaning',
+    title: 'HVAC Dust After Renovation Cleaning | Shynli Post-Construction Cleaning',
+    keywords: [
+      'hvac dust after renovation',
+      'dust blowing from vents after remodel',
+      'construction dust in vents',
+      'post renovation dust keeps coming back',
+      'cleaning after HVAC dust',
+    ],
+    description:
+      'What to check when dust seems to come from vents after renovation cleaning, what a cleaner can handle, and when HVAC or duct help may be separate.',
+    eyebrow: 'HVAC dust guide',
+    h1: 'What if dust keeps coming from the HVAC after renovation cleaning?',
+    summary:
+      'If dust returns every time the system runs, the issue may be more than surface cleaning. Start with filters, vents, source rooms, and timing.',
+    readTime: '7 min read',
+    sourceQuestion: 'Why does renovation dust keep blowing from my vents?',
+    updated: 'June 20, 2026',
+    shortAnswer:
+      'If dust appears after the HVAC runs, check whether filters were changed, vents were covered during the work, returns pulled dust from the work area, and more dusty trades are still active. A post-construction cleaner can clean reachable vent covers and surrounding surfaces, but duct cleaning, HVAC service, hidden contamination, or air-quality testing are separate services.',
+    sections: [
+      {
+        title: 'First check whether the system moved dust during construction',
+        body: [
+          'Renovation dust spreads faster when the furnace or air conditioning runs during drywall sanding, flooring cuts, demolition, painting prep, or cabinet work. Return vents can pull fine dust out of the work zone and supply vents can move it into rooms that were never renovated.',
+          'If the home looked clean until the system ran, make a note of which vents seem involved, which rooms get dusty first, and whether the filter looks loaded. That pattern helps separate surface dust from air movement.',
+        ],
+        links: [
+          { href: '/vent-cleaning-after-renovation-dust', label: 'Vent cleaning after renovation dust' },
+          { href: '/construction-dust-cleaning', label: 'Construction dust cleaning' },
+        ],
+      },
+      {
+        title: 'Change filters before judging the cleaning',
+        body: [
+          'A filter that collected construction dust can keep the system struggling and may make the home feel dusty again. If the filter was not changed after the dusty phase, replace it before or around the cleaning timeline and keep another replacement ready if dust was heavy.',
+          'Filters are not a magic fix for settled dust on trim, floors, ledges, cabinets, or furniture. They are one part of the plan. A home may still need top-down cleaning and damp wiping after airborne dust has had time to settle.',
+        ],
+        links: [
+          { href: '/guides/why-construction-dust-keeps-coming-back/', label: 'Why dust keeps coming back' },
+          { href: '/renovation-dust-cleaning', label: 'Renovation dust cleaning' },
+        ],
+      },
+      {
+        title: 'Know the boundary between cleaning and HVAC work',
+        body: [
+          'Post-construction cleaning can include reachable vent covers, dusty surfaces around registers, floors below vents, trim, ledges, doors, and nearby walls when included in the quote. It does not automatically include cleaning inside ductwork or diagnosing the HVAC system.',
+          'If dust visibly blows from vents after reachable surfaces are clean, or if the system smells dusty every time it starts, you may need an HVAC or duct conversation in addition to cleaning. That is a separate specialty, not a failed floor wipe.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+          { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+        ],
+      },
+      {
+        title: 'Book the cleaning after the dust source is controlled',
+        body: [
+          'If sanding, cutting, drilling, or demo is still happening, the HVAC question is not solved yet. Cleaning before the dust source ends can make the home look better briefly, then disappoint everyone when the system moves the next layer around.',
+          'When requesting a quote, send photos of vent covers, the dustiest rooms, filter condition if relevant, and surfaces where dust returns fastest. Mention whether HVAC ran during the work and whether the home is occupied.',
+        ],
+        links: [
+          { href: '/guides/how-to-photograph-construction-dust-for-cleaning-quote/', label: 'Dust photos before booking' },
+          { href: '/post-construction-cleaning-scheduling', label: 'Scheduling' },
+          { href: '/request-a-bid', label: 'Project intake' },
+        ],
+      },
+    ],
+    checklistTitle: 'Before blaming the clean, check these HVAC dust clues',
+    checklist: [
+      'Was the HVAC running during drywall sanding, flooring cuts, demo, or paint prep?',
+      'Were supply and return vents covered during the dusty work?',
+      'Were filters changed after construction dust was created?',
+      'Does dust return only after the system runs, or all day even when it is off?',
+      'Are vent covers dusty, or does dust seem to come from inside the system?',
+      'Are more trades scheduled that could restart the dust problem?',
+    ],
+    faq: [
+      {
+        q: 'Do post-construction cleaners clean inside ducts?',
+        a: 'Standard post-construction cleaning can include reachable vent covers and nearby surfaces, but duct cleaning and HVAC service are separate unless specifically confirmed.',
+      },
+      {
+        q: 'Should I change the HVAC filter before or after cleaning?',
+        a: 'If the filter is loaded with construction dust, change it before judging the cleaning result. For heavy dust, you may need another replacement after the home has been cleaned and the remaining dust has settled.',
+      },
+      {
+        q: 'Can dust from vents make the home dirty again?',
+        a: 'Yes, if the system pulled dust into returns or ducts during construction. Surface cleaning helps, but the air movement source may also need attention.',
+      },
+      {
+        q: 'Should I run the HVAC during cleaning?',
+        a: 'That depends on the dust level and conditions. If dust is heavy, talk through the plan first so the system does not keep spreading fine particles while surfaces are being reset.',
+      },
+    ],
+    related: [
+      { href: '/post-construction-cleaning', label: 'Post-construction cleaning' },
+      { href: '/vent-cleaning-after-renovation-dust', label: 'Vent cleaning after renovation dust' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/grout-haze-paint-overspray-and-renovation-residue',
+    title: 'Grout Haze, Paint Overspray, And Renovation Residue | Shynli',
+    keywords: [
+      'grout haze after renovation',
+      'paint overspray after remodel',
+      'construction residue cleaning',
+      'post construction residue removal',
+      'renovation cleaning vs repair',
+    ],
+    description:
+      'How to tell whether grout haze, paint overspray, caulk residue, adhesive, or construction marks belong in cleaning, contractor correction, or specialty restoration.',
+    eyebrow: 'Residue guide',
+    h1: 'Grout haze, paint overspray, and renovation residue: cleaning or contractor correction?',
+    summary:
+      'Some residue is ordinary post-construction detail cleaning. Some is finish damage or specialty removal. The safest move is to identify it before scrubbing.',
+    readTime: '8 min read',
+    sourceQuestion: 'Can post-construction cleaners remove grout haze, paint overspray, or dried residue?',
+    updated: 'June 20, 2026',
+    shortAnswer:
+      'Light dust, fingerprints, smudges, and some surface residue may fit post-construction cleaning. Hardened grout haze, paint overspray, adhesive, caulk, mortar, scratches, etching, or chemical-sensitive surfaces may need installer correction, specialty products, or restoration. Photograph the residue, identify the surface, and confirm the scope before anyone scrapes or uses strong chemicals.',
+    sections: [
+      {
+        title: 'Not every mark is a cleaning problem',
+        body: [
+          'After renovation, it is common to see dust, fingerprints, floor film, window smudges, cabinet dust, bathroom residue, and light specks. Those can often be discussed as part of post-construction final cleaning when the surface is safe to clean.',
+          'But a white film on tile, cured paint on hardware, adhesive on flooring, scratched glass, caulk smears, mortar, or damaged finish may not be a normal cleaning task. It may be a trade correction or specialty removal issue.',
+        ],
+        links: [
+          { href: '/what-is-included-in-post-construction-cleaning', label: 'What is included' },
+          { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+        ],
+      },
+      {
+        title: 'Surface type changes the risk',
+        body: [
+          'Porcelain tile, natural stone, hardwood, LVP, laminate, stainless steel, painted trim, glass, acrylic tubs, shower doors, fixtures, and sealed counters do not react the same way to scraping or chemicals. What is safe on one surface can ruin another.',
+          'That is why the quote should include close-up photos and surface names if you know them. A cleaner should not guess with blades, acids, solvents, or abrasive pads on a finished surface without a clear agreement.',
+        ],
+        links: [
+          { href: '/floor-cleaning-after-construction', label: 'Floor cleaning after construction' },
+          { href: '/window-track-cleaning-after-construction', label: 'Window track cleaning after construction' },
+          { href: '/fixture-cleaning-after-construction', label: 'Fixture cleaning after construction' },
+        ],
+      },
+      {
+        title: 'Use cleaning to reveal defects, not erase responsibility',
+        body: [
+          'If grout haze or paint overspray was left by a trade, document it before trying to remove it. The installer may need to correct the work, especially if the residue is heavy, cured, or tied to finish quality.',
+          'A final clean can make floors, counters, glass, fixtures, and trim easier to inspect. It should not make it impossible to show what was left behind. Photos before cleaning protect the conversation.',
+        ],
+        links: [
+          { href: '/guides/what-to-clean-before-final-payment-to-contractor/', label: 'Cleaning before final payment' },
+          { href: '/cleaning-before-owner-walkthrough', label: 'Owner walkthrough cleaning' },
+        ],
+      },
+      {
+        title: 'Ask for the residue to be scoped separately',
+        body: [
+          'When you request a cleaning quote, do not hide residue in a general dust request. Say exactly what you see: grout haze on porcelain tile, paint specks on glass, adhesive on LVP, caulk on fixtures, mortar dust on trim, or film on new floors.',
+          'The response may be: yes, it fits the cleaning scope; no, it belongs to the contractor; or maybe, but only after a test spot and written approval. That answer is better than discovering the risk in the middle of the cleaning visit.',
+        ],
+        links: [
+          { href: '/guides/how-to-photograph-construction-dust-for-cleaning-quote/', label: 'How to photograph residue' },
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/post-construction-cleaning-quality-control', label: 'Quality control' },
+        ],
+      },
+    ],
+    checklistTitle: 'Before asking cleaners to remove residue',
+    checklist: [
+      'Photograph the residue close up and from a wider room angle.',
+      'Name the surface if you know it: porcelain, stone, glass, LVP, hardwood, acrylic, stainless, or painted trim.',
+      'Ask whether the installer left product instructions or cleaning limits.',
+      'Separate dust cleaning from scraping, solvent work, acid work, or specialty restoration.',
+      'Document heavy residue before final payment or contractor signoff.',
+      'Confirm test spots and written approval before aggressive removal is attempted.',
+    ],
+    faq: [
+      {
+        q: 'Can post-construction cleaners remove grout haze?',
+        a: 'Light haze on a compatible surface may be possible, but heavy or cured haze can require installer correction, specialty products, and careful testing. Natural stone and delicate finishes need extra caution.',
+      },
+      {
+        q: 'Can cleaners scrape paint off windows?',
+        a: 'Sometimes, but scraper use depends on the glass, coating, paint type, and risk of scratching. It should be agreed before the visit rather than assumed.',
+      },
+      {
+        q: 'Is paint overspray part of standard cleaning?',
+        a: 'Not automatically. Fine dust and smudges are different from cured paint on finished surfaces. Overspray may need contractor correction or specialty removal.',
+      },
+      {
+        q: 'Should I try removing residue myself first?',
+        a: 'Be careful. Scrubbing, acids, solvents, blades, or abrasive pads can damage new finishes. Photograph first and ask what method is safe for the surface.',
+      },
+    ],
+    related: [
+      { href: '/post-construction-cleaning', label: 'Post-construction cleaning' },
+      { href: '/construction-cleaning-checklist', label: 'Construction cleaning checklist' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+      { href: '/request-a-bid', label: 'Project intake' },
     ],
   },
 ]

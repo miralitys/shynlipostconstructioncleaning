@@ -29,7 +29,7 @@ const stats = {
   maxInternalLinks: 0,
 }
 
-if (urls.length !== 356) failures.push(`Sitemap should contain 356 URLs, found ${urls.length}`)
+if (urls.length !== 361) failures.push(`Sitemap should contain 361 URLs, found ${urls.length}`)
 if (uniqueUrls.size !== urls.length) failures.push('Sitemap contains duplicate URLs')
 
 const browser = await chromium.launch()

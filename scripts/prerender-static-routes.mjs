@@ -73,6 +73,11 @@ function guideRoute(path) {
   return path.endsWith('/') ? path : `${path}/`
 }
 
+function guideIsoDate(page) {
+  const timestamp = Date.parse(`${page.updated} UTC`)
+  return Number.isNaN(timestamp) ? '2026-06-16' : new Date(timestamp).toISOString().slice(0, 10)
+}
+
 function seoDescription(page) {
   const city = page.title.match(/ in (.+)$/)?.[1]
 
@@ -154,6 +159,8 @@ function guideHubSchema(pages) {
 }
 
 function guideArticleSchema(page) {
+  const updatedIso = guideIsoDate(page)
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -161,8 +168,8 @@ function guideArticleSchema(page) {
         '@type': 'Article',
         headline: page.h1,
         description: page.description,
-        datePublished: '2026-06-16',
-        dateModified: '2026-06-16',
+        datePublished: updatedIso,
+        dateModified: updatedIso,
         author: {
           '@type': 'Organization',
           name: 'Shynli Post-Construction Cleaning',
@@ -278,40 +285,61 @@ function relatedGuideLinks(path) {
     [guideRoute('/guides/can-you-live-at-home-during-renovation-cleaning'), 'Living at home during renovation cleaning'],
     [guideRoute('/guides/what-to-clean-before-final-payment-to-contractor'), 'What to clean before final contractor payment'],
     [guideRoute('/guides/post-renovation-cleaning-before-baby-pets-guests'), 'Cleaning before babies, pets, or guests'],
+    [guideRoute('/guides/cleaning-after-punch-list-work-returns'), 'Cleaning after punch-list work returns'],
+    [guideRoute('/guides/how-to-photograph-construction-dust-for-cleaning-quote'), 'How to photograph construction dust'],
+    [guideRoute('/guides/contractor-cleanup-vs-hiring-post-construction-cleaner'), 'Contractor cleanup vs hiring a cleaner'],
+    [guideRoute('/guides/hvac-dust-after-renovation-cleaning'), 'HVAC dust after renovation cleaning'],
+    [guideRoute('/guides/grout-haze-paint-overspray-and-renovation-residue'), 'Grout haze, paint overspray, and residue'],
   ]
 
   const map = {
-    '/post-construction-cleaning': [0, 1, 3],
-    '/post-construction-cleaning-faq': [0, 2, 4],
-    '/construction-dust-cleaning': [0, 2, 4],
-    '/drywall-dust-cleaning': [0, 2],
-    '/renovation-dust-cleaning': [0, 2, 4],
-    '/vent-cleaning-after-renovation-dust': [0, 4],
-    '/after-renovation-cleaning': [2, 4, 0],
-    '/post-renovation-house-cleaning': [2, 4],
-    '/construction-cleaning-for-homeowners': [1, 2, 4],
-    '/residential-post-construction-cleaning': [2, 4],
-    '/cleaning-after-remodel': [1, 2, 4],
-    '/remodel-cleanup-service': [1, 2],
-    '/contractor-cleanup-service': [1, 3],
-    '/what-is-not-included-in-post-construction-cleaning': [1, 4],
-    '/cleaning-before-owner-walkthrough': [3, 1],
-    '/cleaning-before-final-inspection': [3, 0],
-    '/punch-list-cleaning': [3, 1],
-    '/handoff-cleaning': [3, 0],
-    '/cleaning-before-move-in': [4, 2, 0],
-    '/move-in-ready-construction-cleaning': [4, 2],
-    '/what-is-included-in-post-construction-cleaning': [4, 1],
-    '/post-construction-cleaning-cost': [1, 3, 0],
-    '/post-construction-cleaning-checklist': [3, 4],
-    '/construction-cleaning-checklist': [0, 3, 4],
+    '/post-construction-cleaning': [7, 6, 0],
+    '/post-construction-cleaning-faq': [8, 6, 7],
+    '/construction-dust-cleaning': [8, 6, 0],
+    '/drywall-dust-cleaning': [8, 0, 6],
+    '/renovation-dust-cleaning': [8, 0, 6],
+    '/vent-cleaning-after-renovation-dust': [8, 0, 6],
+    '/after-renovation-cleaning': [8, 5, 6],
+    '/post-renovation-house-cleaning': [8, 6, 2],
+    '/construction-cleaning-for-homeowners': [7, 6, 5],
+    '/residential-post-construction-cleaning': [7, 8, 6],
+    '/cleaning-after-remodel': [7, 5, 9],
+    '/remodel-cleanup-service': [7, 5, 6],
+    '/contractor-cleanup-service': [7, 1, 5],
+    '/construction-cleaning-for-contractors': [7, 5, 3],
+    '/general-contractor-final-cleaning': [7, 5, 3],
+    '/what-is-not-included-in-post-construction-cleaning': [7, 9, 1],
+    '/what-is-included-in-post-construction-cleaning': [7, 9, 4],
+    '/cleaning-before-owner-walkthrough': [5, 9, 3],
+    '/cleaning-before-final-inspection': [5, 8, 3],
+    '/punch-list-cleaning': [5, 3, 7],
+    '/handoff-cleaning': [5, 3, 8],
+    '/cleaning-before-move-in': [8, 6, 4],
+    '/move-in-ready-construction-cleaning': [8, 6, 4],
+    '/post-construction-cleaning-cost': [6, 7, 5],
+    '/post-construction-cleaning-prices': [6, 7, 5],
+    '/post-construction-cleaning-estimate': [6, 7, 5],
+    '/post-construction-cleaning-quote': [6, 7, 5],
+    '/construction-cleaning-estimate': [6, 7, 5],
+    '/post-construction-cleaning-photo-quote': [6, 8, 9],
+    '/post-construction-cleaning-checklist': [6, 5, 9],
+    '/construction-cleaning-checklist': [6, 9, 5],
+    '/floor-cleaning-after-construction': [9, 6, 3],
+    '/window-track-cleaning-after-construction': [9, 6, 3],
+    '/window-installation-cleanup': [9, 6, 3],
+    '/cleaning-after-painting-and-remodeling': [9, 5, 6],
+    '/painting-project-cleanup': [9, 5, 6],
+    '/cleaning-after-kitchen-remodel': [9, 6, 5],
+    '/cleaning-after-bathroom-remodel': [9, 6, 5],
   }
 
   if (map[path]) return map[path].map((index) => allGuides[index])
-  if (path.includes('dust')) return [allGuides[0], allGuides[4]]
-  if (path.includes('remodel') || path.includes('renovation')) return [allGuides[1], allGuides[2], allGuides[4]]
-  if (path.includes('walkthrough') || path.includes('inspection') || path.includes('handoff')) return [allGuides[3], allGuides[0]]
-  if (path.includes('homeowner') || path.includes('move-in')) return [allGuides[2], allGuides[4]]
+  if (path.includes('vent') || path.includes('hvac')) return [allGuides[8], allGuides[0], allGuides[6]]
+  if (path.includes('dust')) return [allGuides[8], allGuides[0], allGuides[6]]
+  if (path.includes('paint') || path.includes('floor') || path.includes('window')) return [allGuides[9], allGuides[6]]
+  if (path.includes('remodel') || path.includes('renovation')) return [allGuides[7], allGuides[5], allGuides[8]]
+  if (path.includes('walkthrough') || path.includes('inspection') || path.includes('handoff')) return [allGuides[5], allGuides[3], allGuides[9]]
+  if (path.includes('homeowner') || path.includes('move-in')) return [allGuides[7], allGuides[6], allGuides[4]]
   return []
 }
 
@@ -433,8 +461,8 @@ function renderGuideHub() {
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Post-construction cleaning guides that answer real homeowner and contractor questions about dust, final walkthroughs, renovation cleanup, and move-in readiness." />
-    <meta name="keywords" content="post construction cleaning guides, renovation cleaning questions, construction dust cleaning guide, final cleaning guide, post renovation cleaning help" />
+    <meta name="description" content="Post-construction cleaning guides for renovation dust, HVAC dust, contractor cleanup, quote photos, punch-list touch-ups, final walkthroughs, and move-in readiness." />
+    <meta name="keywords" content="post construction cleaning guides, renovation cleaning questions, construction dust cleaning guide, post construction cleanup questions, renovation dust quote photos, final cleaning guide, post renovation cleaning help" />
     <meta name="robots" content="index,follow" />
     <title>Post-Construction Cleaning Guides | Shynli Post-Construction Cleaning</title>
     <style>${shellStyle}</style>
@@ -451,7 +479,7 @@ function renderGuideHub() {
           <div class="guide-hero">
             <span class="badge hero-badge">Post-construction cleaning guides</span>
             <h1>Human answers for the questions people ask before the final clean.</h1>
-            <p>Practical guides for homeowners, remodelers, property teams, and contractors dealing with renovation dust, final walkthroughs, contractor mess, move-in timing, and family-ready cleanup.</p>
+            <p>Practical guides for homeowners, remodelers, property teams, and contractors dealing with renovation dust, HVAC dust, quote photos, contractor cleanup, punch-list returns, residue, move-in timing, and final walkthroughs.</p>
           </div>
           <section class="guide-hub-intro">
             <div><div class="section-kicker">Why these guides exist</div><h2>Post-construction cleaning questions usually show up when the project is almost done.</h2></div>
@@ -489,6 +517,7 @@ function renderGuideHub() {
 function renderGuideArticle(page) {
   const schema = JSON.stringify(guideArticleSchema(page)).replaceAll('</script', '<\\/script')
   const quote = quoteHref(page.path, { cta: 'guide-final-quote' })
+  const updatedIso = guideIsoDate(page)
 
   return `<!doctype html>
 <html lang="en" data-route="inner">
@@ -517,7 +546,7 @@ function renderGuideArticle(page) {
                 <span class="badge hero-badge">${escapeHtml(page.eyebrow)}</span>
                 <h1>${escapeHtml(page.h1)}</h1>
                 <p>${escapeHtml(page.summary)}</p>
-                <div class="guide-meta"><span>${escapeHtml(page.readTime)}</span><time datetime="2026-06-16">${escapeHtml(page.updated)}</time><span>${escapeHtml(page.sourceQuestion)}</span></div>
+                <div class="guide-meta"><span>${escapeHtml(page.readTime)}</span><time datetime="${updatedIso}">${escapeHtml(page.updated)}</time><span>${escapeHtml(page.sourceQuestion)}</span></div>
               </div>
               <section class="guide-short-answer"><div class="section-kicker">Short answer</div><p>${escapeHtml(page.shortAnswer)}</p></section>
               ${page.sections

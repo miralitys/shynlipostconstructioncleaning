@@ -41,8 +41,13 @@ const sitemapPaths = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((
 const failures = []
 const pages = []
 
+function canonicalPath(path) {
+  if (path === '/') return '/'
+  return path.endsWith('/') ? path : `${path}/`
+}
+
 for (const path of top30) {
-  if (!sitemapPaths.has(path)) failures.push(`${path}: missing from sitemap`)
+  if (!sitemapPaths.has(canonicalPath(path))) failures.push(`${path}: missing from sitemap`)
 }
 
 const browser = await chromium.launch()
@@ -85,7 +90,7 @@ for (const path of top30) {
   })
 
   const lower = data.domText.toLowerCase()
-  const expectedCanonical = `https://shynlipostconstructioncleaning.com${path === '/' ? '' : path}`
+  const expectedCanonical = `https://shynlipostconstructioncleaning.com${path === '/' ? '' : canonicalPath(path)}`
   if (data.h1Count !== 1) failures.push(`${path}: expected 1 H1, found ${data.h1Count}`)
   if (data.h2Count < 4 && path !== '/') failures.push(`${path}: weak section structure, only ${data.h2Count} H2s`)
   if (data.title.length < 35 || data.title.length > 90) failures.push(`${path}: title length ${data.title.length}`)
