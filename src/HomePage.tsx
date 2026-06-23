@@ -141,10 +141,16 @@ const guideHighlights = [
     copy: 'How to separate normal post-construction cleaning from heavy debris, damage, and unresolved punch-list work.',
   },
   {
-    href: '/guides/what-to-clean-before-final-payment-to-contractor/',
-    eyebrow: 'Walkthrough guide',
-    title: 'What to clean before final contractor payment',
-    copy: 'A practical way to make the work visible before walkthrough without hiding issues that should stay on the punch list.',
+    href: '/guides/why-floors-feel-gritty-after-construction-cleaning/',
+    eyebrow: 'Floor dust guide',
+    title: 'Why floors still feel gritty after cleaning',
+    copy: 'How to tell whether the floor needs another detail pass, residue review, or contractor correction.',
+  },
+  {
+    href: '/guides/when-renovation-dust-needs-specialty-remediation/',
+    eyebrow: 'Safety boundary guide',
+    title: 'When dust is not ordinary cleaning',
+    copy: 'Where normal post-construction cleaning stops and specialty remediation, inspection, or contractor correction should happen first.',
   },
 ]
 

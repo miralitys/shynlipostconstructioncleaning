@@ -909,56 +909,82 @@ function relatedGuideLinks(path: string): GuideLink[] {
       href: guideHref('/guides/grout-haze-paint-overspray-and-renovation-residue'),
       label: 'Grout haze, paint overspray, and residue',
     },
+    {
+      href: guideHref('/guides/why-floors-feel-gritty-after-construction-cleaning'),
+      label: 'Why floors feel gritty after cleaning',
+    },
+    {
+      href: guideHref('/guides/should-post-construction-cleaners-clean-walls-and-ceilings'),
+      label: 'Cleaning walls and ceilings after construction',
+    },
+    {
+      href: guideHref('/guides/cleaning-renovation-dust-from-furniture-and-belongings'),
+      label: 'Cleaning dust from furniture and belongings',
+    },
+    {
+      href: guideHref('/guides/can-post-construction-cleaning-remove-renovation-smells'),
+      label: 'Renovation smells after cleaning',
+    },
+    {
+      href: guideHref('/guides/when-renovation-dust-needs-specialty-remediation'),
+      label: 'When dust needs specialty remediation',
+    },
   ]
 
   const map: Record<string, string[]> = {
-    '/post-construction-cleaning': [allGuides[7].href, allGuides[6].href, allGuides[0].href],
-    '/post-construction-cleaning-faq': [allGuides[8].href, allGuides[6].href, allGuides[7].href],
-    '/construction-dust-cleaning': [allGuides[8].href, allGuides[6].href, allGuides[0].href],
-    '/drywall-dust-cleaning': [allGuides[8].href, allGuides[0].href, allGuides[6].href],
-    '/renovation-dust-cleaning': [allGuides[8].href, allGuides[0].href, allGuides[6].href],
+    '/post-construction-cleaning': [allGuides[7].href, allGuides[10].href, allGuides[14].href],
+    '/post-construction-cleaning-faq': [allGuides[14].href, allGuides[13].href, allGuides[8].href],
+    '/construction-dust-cleaning': [allGuides[14].href, allGuides[11].href, allGuides[0].href],
+    '/drywall-dust-cleaning': [allGuides[11].href, allGuides[14].href, allGuides[0].href],
+    '/renovation-dust-cleaning': [allGuides[12].href, allGuides[11].href, allGuides[0].href],
     '/vent-cleaning-after-renovation-dust': [allGuides[8].href, allGuides[0].href, allGuides[6].href],
-    '/after-renovation-cleaning': [allGuides[8].href, allGuides[5].href, allGuides[6].href],
-    '/post-renovation-house-cleaning': [allGuides[8].href, allGuides[6].href, allGuides[2].href],
-    '/construction-cleaning-for-homeowners': [allGuides[7].href, allGuides[6].href, allGuides[5].href],
-    '/residential-post-construction-cleaning': [allGuides[7].href, allGuides[8].href, allGuides[6].href],
-    '/cleaning-after-remodel': [allGuides[7].href, allGuides[5].href, allGuides[9].href],
+    '/after-renovation-cleaning': [allGuides[13].href, allGuides[12].href, allGuides[10].href],
+    '/post-renovation-house-cleaning': [allGuides[12].href, allGuides[13].href, allGuides[2].href],
+    '/construction-cleaning-for-homeowners': [allGuides[12].href, allGuides[14].href, allGuides[7].href],
+    '/residential-post-construction-cleaning': [allGuides[12].href, allGuides[10].href, allGuides[8].href],
+    '/cleaning-after-remodel': [allGuides[13].href, allGuides[12].href, allGuides[7].href],
     '/remodel-cleanup-service': [allGuides[7].href, allGuides[5].href, allGuides[6].href],
     '/contractor-cleanup-service': [allGuides[7].href, allGuides[1].href, allGuides[5].href],
     '/construction-cleaning-for-contractors': [allGuides[7].href, allGuides[5].href, allGuides[3].href],
     '/general-contractor-final-cleaning': [allGuides[7].href, allGuides[5].href, allGuides[3].href],
-    '/what-is-not-included-in-post-construction-cleaning': [allGuides[7].href, allGuides[9].href, allGuides[1].href],
-    '/what-is-included-in-post-construction-cleaning': [allGuides[7].href, allGuides[9].href, allGuides[4].href],
+    '/what-is-not-included-in-post-construction-cleaning': [allGuides[14].href, allGuides[13].href, allGuides[9].href],
+    '/what-is-included-in-post-construction-cleaning': [allGuides[10].href, allGuides[11].href, allGuides[4].href],
     '/cleaning-before-owner-walkthrough': [allGuides[5].href, allGuides[9].href, allGuides[3].href],
     '/cleaning-before-final-inspection': [allGuides[5].href, allGuides[8].href, allGuides[3].href],
     '/punch-list-cleaning': [allGuides[5].href, allGuides[3].href, allGuides[7].href],
     '/handoff-cleaning': [allGuides[5].href, allGuides[3].href, allGuides[8].href],
-    '/cleaning-before-move-in': [allGuides[8].href, allGuides[6].href, allGuides[4].href],
-    '/move-in-ready-construction-cleaning': [allGuides[8].href, allGuides[6].href, allGuides[4].href],
-    '/post-construction-cleaning-cost': [allGuides[6].href, allGuides[7].href, allGuides[5].href],
+    '/cleaning-before-move-in': [allGuides[12].href, allGuides[10].href, allGuides[4].href],
+    '/move-in-ready-construction-cleaning': [allGuides[12].href, allGuides[10].href, allGuides[4].href],
+    '/post-construction-cleaning-cost': [allGuides[10].href, allGuides[6].href, allGuides[13].href],
     '/post-construction-cleaning-prices': [allGuides[6].href, allGuides[7].href, allGuides[5].href],
     '/post-construction-cleaning-estimate': [allGuides[6].href, allGuides[7].href, allGuides[5].href],
     '/post-construction-cleaning-quote': [allGuides[6].href, allGuides[7].href, allGuides[5].href],
     '/construction-cleaning-estimate': [allGuides[6].href, allGuides[7].href, allGuides[5].href],
     '/post-construction-cleaning-photo-quote': [allGuides[6].href, allGuides[8].href, allGuides[9].href],
-    '/post-construction-cleaning-checklist': [allGuides[6].href, allGuides[5].href, allGuides[9].href],
-    '/construction-cleaning-checklist': [allGuides[6].href, allGuides[9].href, allGuides[5].href],
-    '/floor-cleaning-after-construction': [allGuides[9].href, allGuides[6].href, allGuides[3].href],
+    '/post-construction-cleaning-checklist': [allGuides[10].href, allGuides[11].href, allGuides[6].href],
+    '/construction-cleaning-checklist': [allGuides[10].href, allGuides[11].href, allGuides[14].href],
+    '/floor-cleaning-after-construction': [allGuides[10].href, allGuides[9].href, allGuides[6].href],
+    '/dust-cleaning-after-floor-installation': [allGuides[10].href, allGuides[9].href, allGuides[6].href],
+    '/flooring-project-cleanup': [allGuides[10].href, allGuides[13].href, allGuides[9].href],
     '/window-track-cleaning-after-construction': [allGuides[9].href, allGuides[6].href, allGuides[3].href],
     '/window-installation-cleanup': [allGuides[9].href, allGuides[6].href, allGuides[3].href],
-    '/cleaning-after-painting-and-remodeling': [allGuides[9].href, allGuides[5].href, allGuides[6].href],
-    '/painting-project-cleanup': [allGuides[9].href, allGuides[5].href, allGuides[6].href],
-    '/cleaning-after-kitchen-remodel': [allGuides[9].href, allGuides[6].href, allGuides[5].href],
-    '/cleaning-after-bathroom-remodel': [allGuides[9].href, allGuides[6].href, allGuides[5].href],
+    '/cleaning-after-painting-and-remodeling': [allGuides[13].href, allGuides[11].href, allGuides[9].href],
+    '/painting-project-cleanup': [allGuides[13].href, allGuides[11].href, allGuides[9].href],
+    '/cleaning-after-kitchen-remodel': [allGuides[13].href, allGuides[12].href, allGuides[9].href],
+    '/cleaning-after-bathroom-remodel': [allGuides[13].href, allGuides[12].href, allGuides[11].href],
+    '/cabinet-interior-cleaning-after-construction': [allGuides[12].href, allGuides[13].href, allGuides[6].href],
+    '/post-construction-cleaning-boundaries': [allGuides[14].href, allGuides[13].href, allGuides[11].href],
   }
 
   const exact = map[path]
   if (exact) return exact.map((href) => allGuides.find((guide) => guide.href === href)).filter(Boolean) as GuideLink[]
 
   if (path.includes('vent') || path.includes('hvac')) return [allGuides[8], allGuides[0], allGuides[6]]
-  if (path.includes('dust')) return [allGuides[8], allGuides[0], allGuides[6]]
-  if (path.includes('paint') || path.includes('floor') || path.includes('window')) return [allGuides[9], allGuides[6]]
-  if (path.includes('remodel') || path.includes('renovation')) return [allGuides[7], allGuides[5], allGuides[8]]
+  if (path.includes('dust')) return [allGuides[14], allGuides[11], allGuides[0]]
+  if (path.includes('paint')) return [allGuides[13], allGuides[11], allGuides[9]]
+  if (path.includes('floor')) return [allGuides[10], allGuides[9], allGuides[6]]
+  if (path.includes('window')) return [allGuides[9], allGuides[6]]
+  if (path.includes('remodel') || path.includes('renovation')) return [allGuides[13], allGuides[12], allGuides[7]]
   if (path.includes('walkthrough') || path.includes('inspection') || path.includes('handoff')) return [allGuides[5], allGuides[3], allGuides[9]]
   if (path.includes('homeowner') || path.includes('move-in')) return [allGuides[7], allGuides[6], allGuides[4]]
 
@@ -1287,13 +1313,16 @@ function GuideHubPage({ pages }: { pages: GuidePage[] }) {
     setMeta({
       title: 'Post-Construction Cleaning Guides | Shynli Post-Construction Cleaning',
       description:
-        'Post-construction cleaning guides for renovation dust, HVAC dust, contractor cleanup, quote photos, punch-list touch-ups, final walkthroughs, and move-in readiness.',
+        'Post-construction cleaning guides for renovation dust, gritty floors, walls, furniture, odors, remediation boundaries, quote photos, and final walkthroughs.',
       keywords: [
         'post construction cleaning guides',
         'renovation cleaning questions',
         'construction dust cleaning guide',
         'post construction cleanup questions',
         'renovation dust quote photos',
+        'gritty floors after renovation',
+        'renovation smells after construction',
+        'hazardous renovation dust',
         'final cleaning guide',
         'post renovation cleaning help',
       ],
@@ -1309,8 +1338,8 @@ function GuideHubPage({ pages }: { pages: GuidePage[] }) {
         <h1>Human answers for the questions people ask before the final clean.</h1>
         <p>
           Practical guides for homeowners, remodelers, property teams, and contractors dealing with renovation dust,
-          HVAC dust, quote photos, contractor cleanup, punch-list returns, residue, move-in timing, and final
-          walkthroughs.
+          gritty floors, dusty walls, furniture, renovation smells, remediation boundaries, quote photos, contractor
+          cleanup, punch-list returns, residue, move-in timing, and final walkthroughs.
         </p>
       </div>
 

@@ -18,8 +18,8 @@ const sitemapPaths = paths.map((path) => {
   return path.endsWith('/') ? path : `${path}/`
 })
 
-if (paths.length !== 361) {
-  throw new Error(`Expected 361 sitemap URLs, got ${paths.length}`)
+if (paths.length !== 366) {
+  throw new Error(`Expected 366 sitemap URLs, got ${paths.length}`)
 }
 
 const uniquePaths = new Set(sitemapPaths)

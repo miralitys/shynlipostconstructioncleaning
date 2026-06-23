@@ -1337,6 +1337,525 @@ export const guidePages: GuidePage[] = [
       { href: '/request-a-bid', label: 'Project intake' },
     ],
   },
+  {
+    path: '/guides/why-floors-feel-gritty-after-construction-cleaning',
+    title: 'Why Floors Feel Gritty After Construction Cleaning | Shynli',
+    keywords: [
+      'floors feel gritty after construction cleaning',
+      'gritty floors after renovation',
+      'construction dust on floors',
+      'post construction floor cleaning',
+      'dusty floors after remodel',
+    ],
+    description:
+      'Why floors still feel gritty after construction cleaning, what causes dust film or residue, and when the issue is cleaning, floor finish, or more trade work.',
+    eyebrow: 'Floor dust guide',
+    h1: 'Why floors still feel gritty after construction cleaning.',
+    summary:
+      'A floor can look clean and still feel sandy, chalky, sticky, or filmed after renovation work. The cause matters before anyone keeps mopping.',
+    readTime: '7 min read',
+    sourceQuestion: 'Why do my floors still feel gritty after renovation cleaning?',
+    updated: 'June 23, 2026',
+    shortAnswer:
+      'Floors can feel gritty after construction cleaning because fine drywall dust, sawdust, tile dust, concrete dust, floor finish residue, or adhesive film keeps releasing from edges, seams, baseboards, transitions, and nearby rooms. The fix is not always more mopping. The floor may need controlled vacuuming, repeated microfiber passes, edge detail, residue checks, or contractor correction if the finish itself is rough.',
+    sections: [
+      {
+        title: 'Grit is often trapped at the edges',
+        body: [
+          'Construction dust does not sit only in the center of the room. It hides under toe kicks, along baseboards, in floor transitions, beside vents, behind doors, inside corners, on stair treads, and under cabinet overhangs. When people walk through, that hidden dust gets pulled back onto the open floor.',
+          'That is why the floor may pass a quick visual check but still feel dusty in socks. A post-construction floor reset usually needs edge work first, then open-floor detail. If the edges are skipped, the mop keeps chasing dust that was never removed from the source line.',
+        ],
+        links: [
+          { href: '/floor-cleaning-after-construction', label: 'Floor cleaning after construction' },
+          { href: '/baseboard-cleaning-after-construction', label: 'Baseboard cleaning after construction' },
+        ],
+      },
+      {
+        title: 'More water can make some dust feel worse',
+        body: [
+          'Fine drywall or plaster dust can turn into a cloudy film when it is dragged around with a wet mop too early. The same thing can happen when dirty mop water is reused, when floors are cleaned before the high dust is removed, or when dust from ledges and trim settles after the floor pass.',
+          'For many projects, the better order is top-down dust control, careful vacuuming with the right filtration, detail wiping, then floor cleaning. If the floor is cleaned first, it becomes the landing pad for dust that was still above it.',
+        ],
+        links: [
+          { href: '/drywall-dust-cleaning', label: 'Drywall dust cleaning' },
+          { href: '/construction-dust-cleaning', label: 'Construction dust cleaning' },
+          { href: '/guides/why-construction-dust-keeps-coming-back/', label: 'Why dust keeps coming back' },
+        ],
+      },
+      {
+        title: 'Residue is different from loose dust',
+        body: [
+          'A gritty floor is not always loose dust. It can be grout haze, thinset residue, paint specks, adhesive, sealer haze, floor finish texture, concrete dust, or residue from the installation process. Those issues should be identified before anyone uses stronger chemicals or abrasive pads.',
+          'If the floor finish feels rough, scratches appear, or a white film stays in the same place after careful cleaning, the issue may belong to the installer or a specialty floor-care provider. A cleaner can help reveal the problem, but cleaning should not be used to hide a finish defect.',
+        ],
+        links: [
+          { href: '/guides/grout-haze-paint-overspray-and-renovation-residue/', label: 'Residue after renovation' },
+          { href: '/dust-cleaning-after-floor-installation', label: 'Dust after floor installation' },
+          { href: '/flooring-project-cleanup', label: 'Flooring project cleanup' },
+        ],
+      },
+      {
+        title: 'Send photos before asking for a floor quote',
+        body: [
+          'Photos help because floor problems can look similar in words. A wide room photo shows project scale. A close-up shows whether the issue is dust, haze, streaking, debris, scratches, adhesive, grout film, or finish texture. A photo of the floor edge shows whether dust is coming from trim and transitions.',
+          'When you request a bid, include the floor type if you know it: hardwood, LVP, laminate, tile, concrete, stone, or carpet-adjacent hard flooring. Mention whether the floor is new, refinished, recently grouted, recently sealed, or still under contractor warranty.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+          { href: '/request-a-bid', label: 'Project intake' },
+        ],
+      },
+    ],
+    checklistTitle: 'What to check when floors still feel gritty',
+    checklist: [
+      'Look at floor edges, baseboards, vents, thresholds, stair corners, and cabinet toe kicks.',
+      'Check whether high ledges, trim, walls, fans, or shelves were cleaned before the floor pass.',
+      'Note the floor type and whether it was newly installed, refinished, sealed, grouted, or painted around.',
+      'Take close-up photos of film, grit, streaks, scratches, adhesive, grout haze, or rough finish areas.',
+      'Ask whether any trades still need to sand, cut, paint, grout, install, or punch-list the space.',
+      'Separate ordinary dust cleaning from finish correction, residue removal, or floor restoration.',
+    ],
+    faq: [
+      {
+        q: 'Can post-construction cleaners fix gritty floors?',
+        a: 'They can often remove fine dust, edge dust, footprints, light residue, and normal post-construction floor soil. If the grit is part of the floor finish, grout haze, adhesive, scratches, or installation residue, it may need contractor correction or specialty floor care.',
+      },
+      {
+        q: 'Why does mopping make the floor cloudy after construction?',
+        a: 'Fine dust can mix with water and spread into a film if the floor is mopped before the dust is controlled. Dirty mop water, high dust settling afterward, and residue from the project can also leave the floor cloudy.',
+      },
+      {
+        q: 'Should floors be cleaned first or last?',
+        a: 'Floors should usually be handled late in the process after high surfaces, ledges, trim, cabinets, vents, and nearby dust sources are addressed. Otherwise clean floors collect the next layer of settling dust.',
+      },
+      {
+        q: 'What photos help with a gritty floor quote?',
+        a: 'Send wide room photos, close-ups of the grit or film, floor edges, transitions, baseboards, vents, and any areas where the surface looks scratched, hazy, sticky, or rough.',
+      },
+    ],
+    related: [
+      { href: '/floor-cleaning-after-construction', label: 'Floor cleaning after construction' },
+      { href: '/dust-cleaning-after-floor-installation', label: 'Dust after floor installation' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/should-post-construction-cleaners-clean-walls-and-ceilings',
+    title: 'Should Post-Construction Cleaners Clean Walls And Ceilings? | Shynli',
+    keywords: [
+      'post construction wall cleaning',
+      'clean dust from walls after renovation',
+      'ceiling dust after construction',
+      'drywall dust on walls',
+      'should cleaners clean walls after remodel',
+    ],
+    description:
+      'Should post-construction cleaners clean walls and ceilings? Learn what is reasonable, what can damage paint, and how to scope dust on vertical surfaces.',
+    eyebrow: 'Walls and ceilings',
+    h1: 'Should post-construction cleaners clean walls and ceilings?',
+    summary:
+      'Walls and ceilings collect fine renovation dust, but they also carry the biggest risk of smearing, paint damage, or unrealistic expectations.',
+    readTime: '7 min read',
+    sourceQuestion: 'Do post-construction cleaners clean dust from walls and ceilings?',
+    updated: 'June 23, 2026',
+    shortAnswer:
+      'Post-construction cleaners may dust reachable walls, ceilings, corners, vents, trim, doors, and ledges when that scope is agreed in advance. But washing walls, scrubbing flat paint, removing stains, cleaning high ceilings, treating soot, or fixing paint defects is different from ordinary dust removal. The safe plan depends on paint type, height, dust level, surface condition, and whether the wall was recently painted.',
+    sections: [
+      {
+        title: 'Walls collect dust even when they look fine',
+        body: [
+          'Drywall sanding, flooring cuts, demolition, cabinet work, and paint prep can leave a powdery layer on walls and ceilings. It may not show until sunlight hits the room or until a hand leaves a gray mark on a door frame, switch plate, or painted corner.',
+          'This is especially common near work zones, hallways, staircases, bathroom remodels, kitchens, and rooms where plastic barriers were opened often. A good cleaning plan looks beyond floors and counters when the dust was fine enough to travel.',
+        ],
+        links: [
+          { href: '/drywall-dust-cleaning', label: 'Drywall dust cleaning' },
+          { href: '/dust-cleaning-after-drywall-repair', label: 'Dust after drywall repair' },
+        ],
+      },
+      {
+        title: 'Dusting is not the same as washing walls',
+        body: [
+          'Light wall dusting, cobweb removal, ledge wiping, door detailing, and switch-plate cleaning can fit many post-construction scopes. Full wall washing is a larger request and can be risky on flat paint, fresh paint, textured walls, wallpaper, delicate finishes, or areas with unfinished repairs.',
+          'If the wall has scuffs, stains, paint defects, overspray, caulk smears, nail pops, water marks, or patch texture, that is not just dust. It may need painter correction, touch-up paint, or a different cleaning method than the rest of the room.',
+        ],
+        links: [
+          { href: '/cleaning-after-painting-and-remodeling', label: 'Cleaning after painting and remodeling' },
+          { href: '/painting-project-cleanup', label: 'Painting project cleanup' },
+          { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+        ],
+      },
+      {
+        title: 'Height and access change the quote',
+        body: [
+          'Reachable wall dust is different from two-story ceilings, high stairwells, vaulted rooms, exposed beams, skylight wells, or commercial build-out ceilings. Ladders, high dusting tools, access limits, furniture, and safety conditions can change whether the work is included.',
+          'Before booking, show the height and the dust. A single close-up photo does not show whether the crew can safely reach the area. Send a wide photo of the room, then close-ups of corners, ceiling lines, vents, trim, and dusty patches.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/how-to-prepare-for-post-construction-cleaning', label: 'How to prepare' },
+        ],
+      },
+      {
+        title: 'Time the cleaning after paint and sanding are finished',
+        body: [
+          'If painters, drywall finishers, electricians, or carpenters still need to return, walls and ceilings may get dusty again. Cleaning vertical surfaces before the dustiest trades are finished usually creates frustration instead of a clean handoff.',
+          'For walkthroughs or listing photos, ask whether wall dusting should be part of the final clean or saved for a touch-up after punch-list work. The right answer depends on the deadline and how much work remains.',
+        ],
+        links: [
+          { href: '/touch-up-cleaning', label: 'Touch-up cleaning' },
+          { href: '/cleaning-before-owner-walkthrough', label: 'Owner walkthrough cleaning' },
+          { href: '/guides/cleaning-after-punch-list-work-returns/', label: 'Cleaning after punch-list returns' },
+        ],
+      },
+    ],
+    checklistTitle: 'Details to send if walls or ceilings need attention',
+    checklist: [
+      'Which rooms have visible wall or ceiling dust.',
+      'Whether paint is fresh, flat, textured, wallpapered, glossy, or unknown.',
+      'Photos of corners, ceiling lines, vents, switch plates, doors, trim, and ledges.',
+      'Room height, stairwell height, vaulted areas, beams, skylights, or ladder constraints.',
+      'Any scuffs, stains, overspray, caulk, patch marks, water marks, or paint defects.',
+      'Whether painters, drywall crews, or punch-list trades still need to return.',
+    ],
+    faq: [
+      {
+        q: 'Do cleaners wipe every wall after construction?',
+        a: 'Not automatically. Reachable wall dusting or spot attention may be included when scoped, but full wall washing is a separate expectation and may not be safe for every paint or finish.',
+      },
+      {
+        q: 'Can cleaning damage fresh paint?',
+        a: 'Yes. Fresh or flat paint can mark, streak, or burnish if it is scrubbed too aggressively. Paint condition and cure time should be considered before wall cleaning is promised.',
+      },
+      {
+        q: 'Are ceilings included in post-construction cleaning?',
+        a: 'Reachable ceiling corners, vents, and cobwebs may be included if agreed. High ceilings, beams, skylights, heavy dust, or specialty access can change the scope and price.',
+      },
+      {
+        q: 'Should walls be cleaned before floors?',
+        a: 'Usually yes. Dust from walls, ceilings, trim, and ledges should be controlled before the final floor pass, otherwise clean floors can collect another layer of dust.',
+      },
+    ],
+    related: [
+      { href: '/drywall-dust-cleaning', label: 'Drywall dust cleaning' },
+      { href: '/cleaning-after-painting-and-remodeling', label: 'Cleaning after painting' },
+      { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+      { href: '/post-construction-cleaning-cost', label: 'Cost guide' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/cleaning-renovation-dust-from-furniture-and-belongings',
+    title: 'Cleaning Renovation Dust From Furniture And Belongings | Shynli',
+    keywords: [
+      'renovation dust on furniture',
+      'construction dust on belongings',
+      'cleaning furniture after remodel dust',
+      'post construction cleaning with furniture',
+      'dust on clothes after renovation',
+    ],
+    description:
+      'How to handle renovation dust on furniture, rugs, clothes, electronics, toys, and personal items, and where post-construction cleaning boundaries begin.',
+    eyebrow: 'Belongings guide',
+    h1: 'Cleaning renovation dust from furniture, clothes, and personal belongings.',
+    summary:
+      'Occupied remodels create a different problem than empty new builds: the dust lands on the life already inside the home.',
+    readTime: '8 min read',
+    sourceQuestion: 'What should I do when construction dust gets on furniture and belongings?',
+    updated: 'June 23, 2026',
+    shortAnswer:
+      'When renovation dust lands on furniture and belongings, separate hard surfaces from soft goods. Post-construction cleaners can usually help with reachable hard surfaces, floors, ledges, cabinet exteriors, nearby vents, and clear surfaces. Laundry, upholstery cleaning, electronics detail, toy-by-toy washing, rugs, mattresses, curtains, and fragile personal items may need owner preparation or specialty cleaning.',
+    sections: [
+      {
+        title: 'Occupied remodels spread dust onto daily life',
+        body: [
+          'A bathroom, kitchen, flooring, or drywall project can leave dust far beyond the work area. Beds, sofas, rugs, pet beds, toys, books, open shelves, clothes, electronics, and kitchen items may collect a fine layer even when the contractor used plastic barriers.',
+          'That does not mean every personal item belongs in a standard cleaning scope. It means the quote needs to be honest about what is accessible, what is fragile, what should be moved by the owner, and what needs a different kind of cleaning.',
+        ],
+        links: [
+          { href: '/guides/can-you-live-at-home-during-renovation-cleaning/', label: 'Living at home during renovation cleaning' },
+          { href: '/post-renovation-house-cleaning', label: 'Post-renovation house cleaning' },
+        ],
+      },
+      {
+        title: 'Hard surfaces are usually the better fit',
+        body: [
+          'Cleared counters, shelves, tables, dressers, windowsills, baseboards, cabinet faces, doors, floors, and reachable vent covers can usually be planned as part of a post-renovation cleaning visit. The crew can work faster when the surfaces are not covered with small loose items.',
+          'If shelves are packed, counters are full, or closets are open, the work shifts from dust removal into item handling. That adds time, risk, and ambiguity. The best prep is to box small items, close closets, remove fragile decor, and decide what areas should be skipped.',
+        ],
+        links: [
+          { href: '/how-to-prepare-for-post-construction-cleaning', label: 'How to prepare' },
+          { href: '/what-is-included-in-post-construction-cleaning', label: 'What is included' },
+        ],
+      },
+      {
+        title: 'Soft goods may need a separate plan',
+        body: [
+          'Sofas, rugs, curtains, bedding, clothing, pillows, mattresses, pet beds, and fabric toys hold dust differently than hard surfaces. A cleaner may vacuum around or lightly address accessible surfaces, but deep upholstery cleaning, carpet extraction, laundering, and mattress cleaning are usually separate services.',
+          'If the dust reached bedrooms or living areas, decide what you will wash, what you want the cleaning crew to work around, and what should be handled by an upholstery or carpet provider. That separation prevents a cleaning visit from becoming an undefined restoration job.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+          { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+          { href: '/guides/post-renovation-cleaning-before-baby-pets-guests/', label: 'Cleaning before family use' },
+        ],
+      },
+      {
+        title: 'Electronics and fragile items need caution',
+        body: [
+          'Fine dust around televisions, computers, speakers, keyboards, routers, appliances, collectibles, art, and delicate fixtures should be handled carefully. A general cleaning crew should not open electronics, disassemble devices, or use moisture where it could create damage.',
+          'Before booking, remove or protect fragile items and send photos of rooms where dust landed on belongings. If electronics were heavily exposed, consider the manufacturer guidance or a specialty provider instead of asking a cleaner to guess.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/request-a-bid', label: 'Project intake' },
+        ],
+      },
+    ],
+    checklistTitle: 'Prepare belongings before the cleaning crew arrives',
+    checklist: [
+      'Box small items, loose decor, papers, toys, and fragile pieces before the visit.',
+      'Close closets and cabinets you do not want opened or cleaned inside.',
+      'Decide what laundry, bedding, curtains, rugs, upholstery, and pet items you will handle separately.',
+      'Move or protect electronics, art, collectibles, heirlooms, and delicate objects.',
+      'Send room photos showing where dust landed beyond the construction area.',
+      'Tell the crew which rooms are occupied, off limits, or most important for daily use.',
+    ],
+    faq: [
+      {
+        q: 'Will post-construction cleaners wash all dusty belongings?',
+        a: 'Usually no. Standard cleaning focuses on agreed surfaces and accessible areas. Item-by-item washing, laundry, fragile belongings, and packed shelves need separate preparation or a custom scope.',
+      },
+      {
+        q: 'Can cleaners clean couches or rugs after renovation dust?',
+        a: 'They may vacuum around accessible soft surfaces if agreed, but upholstery cleaning, carpet extraction, rug cleaning, and mattress cleaning are normally separate services.',
+      },
+      {
+        q: 'Should I move furniture before post-construction cleaning?',
+        a: 'Move small and fragile items if possible. Heavy furniture movement should be discussed before the visit so the crew can plan safely and quote the time correctly.',
+      },
+      {
+        q: 'What if dust got into electronics?',
+        a: 'Do not ask a general cleaner to open or wet-clean electronics. Follow manufacturer guidance or use an electronics-safe service if the exposure was heavy.',
+      },
+    ],
+    related: [
+      { href: '/post-renovation-house-cleaning', label: 'Post-renovation house cleaning' },
+      { href: '/residential-post-construction-cleaning', label: 'Residential construction cleaning' },
+      { href: '/how-to-prepare-for-post-construction-cleaning', label: 'How to prepare' },
+      { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/can-post-construction-cleaning-remove-renovation-smells',
+    title: 'Can Post-Construction Cleaning Remove Renovation Smells? | Shynli',
+    keywords: [
+      'renovation smell after construction',
+      'paint smell after remodel',
+      'adhesive smell after renovation',
+      'post construction cleaning odors',
+      'chemical smell after remodel',
+    ],
+    description:
+      'Can post-construction cleaning remove renovation smells? Learn what cleaning can help, when ventilation matters, and when odors are not a cleaning issue.',
+    eyebrow: 'Odor guide',
+    h1: 'Can post-construction cleaning remove renovation smells?',
+    summary:
+      'Some renovation smells improve after dust and residue are removed. Others come from fresh materials, adhesives, paint, moisture, or unfinished work.',
+    readTime: '7 min read',
+    sourceQuestion: 'Will cleaning get rid of paint, adhesive, or renovation smells?',
+    updated: 'June 23, 2026',
+    shortAnswer:
+      'Post-construction cleaning can reduce some renovation smells by removing dust, residue, trash, dirty surfaces, packaging, and film left by trades. But odors from fresh paint, adhesives, caulk, flooring, sealers, cabinets, moisture, sewer gas, mold, gas, or chemical off-gassing may need ventilation, curing time, contractor correction, HVAC help, or another specialist. Strong or sudden chemical smells should be handled cautiously before cleaning is scheduled.',
+    sections: [
+      {
+        title: 'First identify whether the smell is on surfaces or from materials',
+        body: [
+          'Dusty floors, dirty bathrooms, packaging, sawdust, wet mop residue, trash, and construction film can make a renovated space smell unfinished. Cleaning can help when the odor source is normal surface soil or leftover jobsite mess.',
+          'Fresh paint, caulk, adhesive, grout, flooring, cabinets, sealers, and new materials can smell even when the room is clean. In that case, cleaning may make the space look ready while the odor still needs time, airflow, or contractor input.',
+        ],
+        links: [
+          { href: '/cleaning-after-painting-and-remodeling', label: 'Cleaning after painting' },
+          { href: '/flooring-project-cleanup', label: 'Flooring project cleanup' },
+        ],
+      },
+      {
+        title: 'Cleaning helps most when residue is still present',
+        body: [
+          'A detailed clean can remove dusty residue from floors, trim, cabinets, windowsills, fixtures, bathrooms, counters, vents covers, and nearby surfaces. That can reduce the stale jobsite smell that comes from powder, dirt, and debris sitting in the home.',
+          'If the odor is strongest near cabinets, floors, tile, fresh paint, a bathroom, or a recently opened wall, tell the cleaner that. The source area matters more than a general request to make the house smell better.',
+        ],
+        links: [
+          { href: '/what-is-included-in-post-construction-cleaning', label: 'What is included' },
+          { href: '/cabinet-interior-cleaning-after-construction', label: 'Cabinet interior cleaning' },
+          { href: '/cleaning-after-bathroom-remodel', label: 'Bathroom remodel cleaning' },
+        ],
+      },
+      {
+        title: 'Ventilation and curing time may matter more than scrubbing',
+        body: [
+          'Many post-renovation odors improve as products cure and the room is ventilated. Opening windows when weather allows, changing HVAC filters, removing leftover materials, and asking the contractor about product cure times may do more than repeated wiping.',
+          'If a room smells like solvent, fuel, sewer gas, smoke, mold, or something sharp and unusual, do not treat it as a normal cleaning annoyance. Pause, ventilate if appropriate, and identify the source before asking a cleaning crew to work in the area.',
+        ],
+        links: [
+          { href: '/guides/hvac-dust-after-renovation-cleaning/', label: 'HVAC dust after renovation' },
+          { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+        ],
+      },
+      {
+        title: 'Do not cover an odor with fragrance',
+        body: [
+          'A clean renovation should smell neutral, not perfumed. Heavy fragrance can hide whether dust, moisture, trash, adhesive, paint, or a mechanical issue is still present. It can also bother people who are sensitive to scents.',
+          'When requesting a quote, describe the odor plainly: paint-like, glue-like, musty, dusty, sewer-like, smoky, chemical, or unknown. Include when it started, where it is strongest, and whether it changes when HVAC, fans, windows, or doors are used.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+          { href: '/request-a-bid', label: 'Project intake' },
+        ],
+      },
+    ],
+    checklistTitle: 'What to note before asking about renovation smells',
+    checklist: [
+      'Where the odor is strongest: floors, cabinets, bathroom, painted room, vents, basement, or kitchen.',
+      'Whether the smell is dusty, paint-like, glue-like, chemical, musty, sewer-like, smoky, or unknown.',
+      'When the odor started and whether it changes with HVAC, windows, fans, or closed doors.',
+      'Which products were recently used: paint, adhesive, caulk, grout, flooring, sealer, cabinets, or solvents.',
+      'Whether trash, packaging, debris, damp materials, or leftover supplies are still on site.',
+      'Whether anyone has already ruled out gas, sewer, moisture, mold, or other safety issues when relevant.',
+    ],
+    faq: [
+      {
+        q: 'Can cleaning remove paint smell after remodeling?',
+        a: 'Cleaning can remove paint dust, drips, film, and jobsite residue, but the smell of fresh paint may need curing time and ventilation. If the odor is unusually strong, ask the painter or product manufacturer about next steps.',
+      },
+      {
+        q: 'Will post-construction cleaning remove adhesive smell?',
+        a: 'Not always. Adhesive or flooring odors may come from the material itself, not dirt. Cleaning surrounding residue may help the room feel better, but product curing, ventilation, or installer guidance may still be needed.',
+      },
+      {
+        q: 'Should cleaners use fragrance after construction?',
+        a: 'Fragrance should not be used to hide an unresolved source. It is better to remove dust and residue, ventilate appropriately, and identify unusual smells rather than mask them.',
+      },
+      {
+        q: 'What smells are not a normal cleaning issue?',
+        a: 'Gas, sewer, mold, smoke, heavy chemical odors, moisture problems, or odors tied to damaged materials should be identified by the right professional before ordinary cleaning is treated as the solution.',
+      },
+    ],
+    related: [
+      { href: '/cleaning-after-painting-and-remodeling', label: 'Cleaning after painting' },
+      { href: '/flooring-project-cleanup', label: 'Flooring project cleanup' },
+      { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+      { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
+  {
+    path: '/guides/when-renovation-dust-needs-specialty-remediation',
+    title: 'When Renovation Dust Needs Specialty Remediation | Shynli',
+    keywords: [
+      'renovation dust remediation',
+      'lead dust after renovation',
+      'asbestos dust after remodel',
+      'hazardous construction dust cleanup',
+      'when post construction cleaning is not enough',
+    ],
+    description:
+      'When renovation dust is not ordinary post-construction cleaning: lead, asbestos, mold, sewage, heavy debris, unsafe materials, and specialty remediation boundaries.',
+    eyebrow: 'Safety boundary guide',
+    h1: 'When renovation dust needs specialty remediation, not ordinary cleaning.',
+    summary:
+      'Some post-project mess is normal dust. Some dust or debris should stop the cleaning plan until a qualified specialty provider clears the risk.',
+    readTime: '8 min read',
+    sourceQuestion: 'When is renovation dust too hazardous for a normal cleaner?',
+    updated: 'June 23, 2026',
+    shortAnswer:
+      'Renovation dust may need specialty remediation when it could involve lead paint, asbestos-containing material, mold, sewage, biohazards, heavy chemical residue, fire or smoke damage, water damage, sharp debris, or unsafe construction waste. Ordinary post-construction cleaners are for finished, safe spaces. If the material is unknown or potentially hazardous, stop, document it, and use the proper inspector, contractor, or certified remediation provider before final cleaning.',
+    sections: [
+      {
+        title: 'Ordinary dust and hazardous dust are not the same job',
+        body: [
+          'Normal post-construction cleaning is built for finished spaces: drywall dust, sawdust, floor dust, cabinet dust, fixtures, trim, glass, bathrooms, kitchens, reachable vents, and final detail work after the jobsite is safe.',
+          'Potentially hazardous dust is different. If the project disturbed old paint, suspect insulation, old flooring, moldy materials, sewage, smoke damage, or unknown residue, the first question is not price. The first question is whether the area is safe for ordinary cleaners.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+          { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+        ],
+      },
+      {
+        title: 'Lead and asbestos concerns should be separated early',
+        body: [
+          'Homes built before 1978 can raise lead-based paint questions when painted surfaces are disturbed. EPA guidance recommends lead-safe certified contractors for renovation, repair, and painting work in older homes. That is not the same as asking a house cleaner to wipe up unknown dust.',
+          'Asbestos concerns also require caution. EPA information points homeowners toward asbestos professionals when material may be disturbed or removal is needed. If you suspect asbestos-containing material, do not sweep, vacuum, or hire an ordinary cleaning crew to guess.',
+        ],
+        links: [
+          { href: '/guides/cleaning-after-contractors-left/', label: 'Cleaning after contractors left' },
+          { href: '/guides/how-to-photograph-construction-dust-for-cleaning-quote/', label: 'Documenting dust before cleanup' },
+        ],
+      },
+      {
+        title: 'Other red flags can also pause cleaning',
+        body: [
+          'Moldy drywall, active leaks, sewage, rodent waste, fire residue, smoke damage, chemical spills, strong unknown odors, wet insulation, exposed nails, broken tile, loose glass, and heavy demolition debris are not ordinary cleaning details. They can create safety, liability, or specialty-scope problems.',
+          'A cleaning crew can often work after the site is made safe and the specialty issue is resolved. They should not be used as the first line of response when the material is unidentified or the room is still a hazard.',
+        ],
+        links: [
+          { href: '/guides/can-post-construction-cleaning-remove-renovation-smells/', label: 'Renovation smells' },
+          { href: '/construction-cleaning-for-homeowners', label: 'Cleaning for homeowners' },
+        ],
+      },
+      {
+        title: 'Use photos to ask the right question',
+        body: [
+          'If you are unsure, take photos without disturbing the material. Show the age of the home if relevant, what was cut or removed, where the dust landed, and whether the contractor identified the material. Avoid dry sweeping, blowing dust, or using a household vacuum on unknown material.',
+          'When you contact a cleaner, be direct. Say that the dust may involve old paint, asbestos, mold, water damage, chemical residue, or another concern. A responsible answer may be: call remediation first, get clearance, then schedule final cleaning.',
+        ],
+        links: [
+          { href: '/post-construction-cleaning-photo-quote', label: 'Photo-based planning' },
+          { href: '/post-construction-cleaning-scheduling', label: 'Scheduling' },
+          { href: '/request-a-bid', label: 'Project intake' },
+        ],
+      },
+    ],
+    checklistTitle: 'Pause ordinary cleaning if any of these are present',
+    checklist: [
+      'Dust from disturbed paint in an older home where lead may be possible.',
+      'Suspected asbestos material, old insulation, old flooring, pipe wrap, or unknown demolition debris.',
+      'Mold, active moisture, sewage, fire residue, smoke damage, rodent waste, or biohazard concerns.',
+      'Strong unknown chemical odors, solvent spills, or product residue that has not been identified.',
+      'Sharp debris, exposed nails, broken tile, glass, loose materials, or unsafe access paths.',
+      'A contractor, inspector, or specialist has not yet cleared the area for normal occupancy or cleaning.',
+    ],
+    faq: [
+      {
+        q: 'Can post-construction cleaners clean lead dust?',
+        a: 'Ordinary post-construction cleaning should not be treated as lead remediation. If lead dust is possible, use the proper lead-safe contractor, inspector, or remediation process before final cleaning.',
+      },
+      {
+        q: 'Can cleaners clean asbestos dust?',
+        a: 'No ordinary cleaning crew should be asked to clean suspected asbestos dust. Stop and use qualified asbestos professionals if asbestos-containing material may have been disturbed.',
+      },
+      {
+        q: 'What if I am not sure whether the dust is hazardous?',
+        a: 'Do not disturb it further. Take photos, ask the contractor what material was disturbed, and contact the appropriate inspector or specialist before booking ordinary cleaning.',
+      },
+      {
+        q: 'Can final cleaning happen after remediation?',
+        a: 'Often yes, after the specialty provider has completed their work and the space is safe for normal cleaning. The final clean can then focus on ordinary dust, surfaces, floors, fixtures, and handoff readiness.',
+      },
+    ],
+    related: [
+      { href: '/what-is-not-included-in-post-construction-cleaning', label: 'What is not included' },
+      { href: '/post-construction-cleaning-boundaries', label: 'Cleaning boundaries' },
+      { href: '/construction-dust-cleaning', label: 'Construction dust cleaning' },
+      { href: '/post-construction-cleaning-faq', label: 'FAQ' },
+      { href: '/request-a-bid', label: 'Project intake' },
+    ],
+  },
 ]
 
 export const publicRoutes = [
