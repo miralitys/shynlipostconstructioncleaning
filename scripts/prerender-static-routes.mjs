@@ -9,6 +9,16 @@ const seoSource = readFileSync(resolve(rootDir, 'src/seo-pages.ts'), 'utf8')
 const quoteEndpoint = 'https://shynlicleaningservice.com/quote'
 const domain = 'https://shynlipostconstructioncleaning.com'
 
+/*
+ * Профиль Google, общий для всех сайтов сети. В нём 5.0 из 44 настоящих
+ * отзывов с ответами владельца, и до 2026-07-28 на него не ссылался ни один
+ * сайт. Число отзывов растёт, сверять время от времени.
+ */
+const businessEmail = 'info@shynli.com'
+const googleRating = '5.0'
+const googleReviewCount = '44'
+const googleReviewsUrl = 'https://www.google.com/maps/place/?q=place_id:ChIJw5zPGN2Y-GMRTHBrFh1rKYE'
+
 if (!existsSync(resolve(distDir, 'index.html'))) {
   throw new Error('dist/index.html was not found. Run this script after vite build and CSS inlining.')
 }
@@ -396,7 +406,7 @@ function footer(path) {
       <div class="footer-links">
         <div><h3>Services</h3><a href="/rough-cleaning">Rough cleaning</a><a href="/final-cleaning">Final cleaning</a><a href="/touch-up-cleaning">Touch-up cleaning</a><a href="/after-renovation-cleaning">After-renovation dust removal</a><a href="/guides/">Post-construction guides</a></div>
         <div><h3>For</h3><a href="/construction-cleaning-for-contractors">General contractors</a><a href="/remodeler-final-cleaning">Remodelers</a><a href="/property-manager-construction-cleaning">Property teams</a><a href="/construction-cleaning-for-homeowners">Homeowners after renovation</a></div>
-        <div><h3>Contact</h3><a href="tel:+16308127077">+1 (630) 812-7077</a><a href="${escapeHtml(quoteHref(path, { cta: 'footer-contact' }))}">Request a project quote</a><a href="/service-areas">View service areas</a><a href="/what-is-included-in-post-construction-cleaning">See what is included</a><a href="/guides/">Read guides</a><a href="#top">Back to top</a></div>
+        <div><h3>Contact</h3><a href="tel:+16308127077">+1 (630) 812-7077</a><a href="mailto:${businessEmail}">${businessEmail}</a><a href="${googleReviewsUrl}" target="_blank" rel="noopener noreferrer">${googleRating} from ${googleReviewCount} Google reviews</a><a href="${escapeHtml(quoteHref(path, { cta: 'footer-contact' }))}">Request a project quote</a><a href="/service-areas">View service areas</a><a href="/what-is-included-in-post-construction-cleaning">See what is included</a><a href="/guides/">Read guides</a><a href="#top">Back to top</a></div>
       </div>
     </div>
     <div class="footer-bottom"><p>© 2026 Shynli Post-Construction Cleaning. All rights reserved.</p><div><a href="${escapeHtml(quoteHref(path, { cta: 'footer-bottom' }))}">Quote request</a><a href="/privacy-policy">Privacy</a><a href="/terms-of-service">Terms</a><a href="/cancellation-policy">Cancellation</a></div></div>
