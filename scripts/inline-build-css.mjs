@@ -28,6 +28,23 @@ html = html.replace(stylesheetPattern, `<style data-inlined-build-css>${css}</st
 const moduleScriptPattern = /<script type="module" crossorigin src="(\/assets\/[^"]+\.js)"><\/script>/
 const moduleScriptMatch = html.match(moduleScriptPattern)
 
+/*
+ * Раньше здесь у главной был особый случай: приложение подгружалось только
+ * после keydown, pointerdown, pointermove, hashchange, scroll, touchstart
+ * или wheel, а если ничего не происходило, то через 12 секунд.
+ *
+ * Проблема: главная НЕ пре-рендерится, в отличие от остальных 362 маршрутов.
+ * В сыром HTML у неё только каркас, а Googlebot страницы отрисовывает, но не
+ * кликает, не прокручивает и мышь не двигает. Замерено 2026-07-28: главная
+ * отдавала 51 видимое слово, при том что /guides/ отдаёт 1082, а городские
+ * страницы по 749. Таймаут в 12 секунд теоретически спасал, но краулер
+ * столько не ждёт.
+ *
+ * Теперь главная грузится сразу, как все остальные страницы. На
+ * пре-рендеренных маршрутах отложенная загрузка осталась (см.
+ * prerender-static-routes.mjs) и там она безвредна: текст уже лежит в HTML,
+ * скрипт нужен только для интерактивности.
+ */
 if (moduleScriptMatch) {
   const appScriptSrc = moduleScriptMatch[1]
   const loader = `<script data-deferred-app-loader>
@@ -48,18 +65,7 @@ if (moduleScriptMatch) {
     script.src = src;
     document.head.appendChild(script);
   };
-  if (window.location.pathname === '/' && !window.location.hash) {
-    window.addEventListener('keydown', load, { once: true });
-    window.addEventListener('pointerdown', load, { once: true });
-    window.addEventListener('pointermove', load, { once: true });
-    window.addEventListener('hashchange', load, { once: true });
-    window.addEventListener('scroll', load, { once: true, passive: true });
-    window.addEventListener('touchstart', load, { once: true, passive: true });
-    window.addEventListener('wheel', load, { once: true, passive: true });
-    window.setTimeout(load, 12000);
-  } else {
-    load();
-  }
+  load();
 })();
 </script>`
 
