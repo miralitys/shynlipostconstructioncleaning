@@ -12,15 +12,41 @@ const transpiled = ts.transpileModule(source, {
 }).outputText
 
 const { publicRoutes } = await import(`data:text/javascript;base64,${Buffer.from(transpiled).toString('base64')}`)
-const paths = publicRoutes
+
+/*
+ * Связки «город + услуга» (/service-areas/{город}/{услуга}) в карту сайта
+ * НЕ попадают.
+ *
+ * С 2026-07-28 они сведены каноникалом на городскую страницу (см.
+ * prerender-static-routes.mjs, canonicalPathFor). Держать неканоническую
+ * страницу в sitemap значит посылать поиску два противоречивых сигнала:
+ * карта говорит «индексируй меня», каноникал говорит «индексируй другую».
+ *
+ * Второй довод: в Search Console на 2026-07-28 висело 140 страниц
+ * «обнаружена, не проиндексирована», то есть краулинговый бюджет и так
+ * исчерпан. Убрав 210 неканонических адресов, освобождаем его для
+ * страниц, которые действительно должны попасть в индекс.
+ *
+ * Сами страницы остаются доступными по прямым ссылкам и по внутренней
+ * перелинковке, из карты убран только сигнал на индексацию.
+ */
+const isCityServiceCombo = (path) => {
+  const segments = path.split('/').filter(Boolean)
+  return segments[0] === 'service-areas' && segments.length >= 3
+}
+
+const paths = publicRoutes.filter((path) => !isCityServiceCombo(path))
+const excluded = publicRoutes.length - paths.length
 const sitemapPaths = paths.map((path) => {
   if (path === '/') return ''
   return path.endsWith('/') ? path : `${path}/`
 })
 
-if (paths.length !== 366) {
-  throw new Error(`Expected 366 sitemap URLs, got ${paths.length}`)
+if (publicRoutes.length !== 366) {
+  throw new Error(`Expected 366 public routes, got ${publicRoutes.length}`)
 }
+
+console.log(`Sitemap: ${paths.length} URLs (${excluded} city+service combos excluded as non-canonical).`)
 
 const uniquePaths = new Set(sitemapPaths)
 if (uniquePaths.size !== sitemapPaths.length) {

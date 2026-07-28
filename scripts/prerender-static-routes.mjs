@@ -403,6 +403,30 @@ function footer(path) {
   </footer>`
 }
 
+/*
+ * Каноникал для связок «город + услуга».
+ *
+ * Замерено 2026-07-28: две такие страницы (batavia/final-cleaning и
+ * darien/final-cleaning) совпадают на 99.6%, из 714 слов отличаются ТРИ.
+ * Google это уже увидел и вынес вердикт сам: в Search Console 66 страниц
+ * помечены как «канонические версии, выбранные Google и пользователем, не
+ * совпадают», плюс 5 «копия, каноникал не выбран». То есть мы объявляли
+ * каждую связку самостоятельной, а Google с этим не соглашался.
+ *
+ * Решение Рамиса 2026-07-28: свести связки каноникалом на городскую
+ * страницу. 210 связок перестают конкурировать между собой и с городом,
+ * вес собирается на 42 городских страницах.
+ *
+ * Сами страницы остаются доступными, меняется только сигнал для поиска.
+ */
+function canonicalPathFor(path) {
+  const segments = path.split('/').filter(Boolean)
+  if (segments[0] === 'service-areas' && segments.length >= 3) {
+    return guideRoute(`/service-areas/${segments[1]}`)
+  }
+  return guideRoute(path)
+}
+
 function renderPage(page) {
   const description = seoDescription(page)
   const paragraphs = categoryParagraphs(page)
@@ -422,7 +446,7 @@ function renderPage(page) {
     <title>${escapeHtml(page.title)} | Shynli Post-Construction Cleaning</title>
     <style>${shellStyle}</style>
     <style data-inlined-build-css>${inlinedCss}</style>
-    <link rel="canonical" href="${domain}${guideRoute(page.path)}" />
+    <link rel="canonical" href="${domain}${canonicalPathFor(page.path)}" />
     <script type="application/ld+json" data-page-schema="true">${schema}</script>
     ${deferredLoader()}
   </head>
